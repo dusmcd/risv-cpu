@@ -82,4 +82,9 @@ module control_unit(
       aluop = 4'bXXXX;
     end
 
+    else begin
+      gpio_we = 1'b0;
+      regwrite = 1'b0;
+    end
+
 endmodule
