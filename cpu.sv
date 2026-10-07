@@ -4,6 +4,7 @@ module cpu(input logic clk, logic rst);
   initial $readmemh("hexcode.txt", instruction_mem);
 
   logic[11:0] PC_FETCH;
+  logic [4:0] regdest_WB;
 
   always_ff @(posedge clk) begin
     if(~rst) begin
@@ -15,6 +16,14 @@ module cpu(input logic clk, logic rst);
       instruction_EX <= instruction_mem[PC_FETCH];
       PC_FETCH <= PC_FETCH + 12'b1;
     end
+  end
+  
+  // instantiate decoder and control unit
+  // instantiate regfile and alu
+
+  // pipeline registers
+  always_ff @(posedge clk) begin
+    
   end
 
 
