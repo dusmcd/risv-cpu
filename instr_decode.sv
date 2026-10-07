@@ -4,6 +4,7 @@ module instr_decode( input logic[31:0] instruction,
                     output logic[2:0] funct3,
                     output logic [6:0] funct7,
                     output logic[11:0] csr, imm,
+                    output logic [19:0] imm_u,
                     output logic[4:0] shamt);
 
   // break out instruction fields

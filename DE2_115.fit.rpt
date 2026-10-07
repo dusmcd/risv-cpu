@@ -1,5 +1,5 @@
 Fitter report for DE2_115
-Wed Sep 30 16:58:42 2026
+Wed Oct  7 16:01:08 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -65,7 +65,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Wed Sep 30 16:58:42 2026           ;
+; Fitter Status                      ; Successful - Wed Oct  7 16:01:08 2026           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                      ; DE2_115                                         ;
 ; Top-level Entity Name              ; top                                             ;
@@ -1970,8 +1970,8 @@ Warning (169177): 25 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 
     Info (169178): Pin CLOCK_50 uses I/O standard 3.3-V LVTTL at Y2 File: /acct/dm99/csce_611/lab3/lab_riu/top.sv Line: 9
 Info (144001): Generated suppressed messages file /acct/dm99/csce_611/lab3/lab_riu/DE2_115.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 2000 megabytes
-    Info: Processing ended: Wed Sep 30 16:58:42 2026
+    Info: Peak virtual memory: 1997 megabytes
+    Info: Processing ended: Wed Oct  7 16:01:08 2026
     Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:09
 

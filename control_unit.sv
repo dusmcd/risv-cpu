@@ -6,7 +6,7 @@ module control_unit(
   output logic alusrc,
   output logic regwrite,
   output logic[1:0] regsel,
-  output logic[3:0] aluop
+  output logic[3:0] aluop,
   output logic gpio_we
   );
 
@@ -23,7 +23,7 @@ module control_unit(
     else if (opcode == 7'b0010011) begin
       // this is an I-type
       regwrite = 1'b1;
-      gpio_we = 1'b10;
+      gpio_we = 1'b0;
       regsel = 2'b10;
       alusrc = 1'b1;
       // check funct3 and funct7 for specific instruction
@@ -31,10 +31,19 @@ module control_unit(
 
     else if (opcode == 7'b1110011) begin
       // this is the csrrw instruction used for GPIO
-      gpio_we = 1'b1;
       regsel = 2'b00;
       regwrite = 1'b1;
       alusrc = 1'b0; // not used in this instruction
+
+      // need to switch on the address in immediate field
+      case(csr)
+        12'hF00:
+          // write switches to rd
+          gpio_we = 1'b0;
+        12'hF02:
+          // write value of rs1 into HEX displays
+          gpio_we = 1'b1;
+      endcase
     end
 
     else if (opcode == 7'b0110111) begin

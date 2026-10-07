@@ -1,0 +1,25 @@
+# vsim -pedanticerrors -hazards -c -sva -immedassert work.simtop -do "/dev/stdin" 
+# Start time: 16:15:10 on Oct 07,2026
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# //  Questa Sim-64
+# //  Version 2020.1 linux_x86_64 Jan 28 2020
+# //
+# //  Copyright 1991-2020 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.simtop(fast)
+# do /dev/stdin
+#           0 errors were detected
+# 
+# <EOF>
+# End time: 16:15:11 on Oct 07,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

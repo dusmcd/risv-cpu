@@ -5,8 +5,8 @@ module cpu(input logic clk, logic rst);
 
   logic[11:0] PC_FETCH;
 
-  always_ff(@posedge clk)
-    if(rst) begin
+  always_ff @(posedge clk) begin
+    if(~rst) begin
       instruction_EX <= 32'b0;
       PC_FETCH <= 12'b0;
     end
@@ -15,7 +15,7 @@ module cpu(input logic clk, logic rst);
       instruction_EX <= instruction_mem[PC_FETCH];
       PC_FETCH <= PC_FETCH + 12'b1;
     end
-
+  end
 
 
 endmodule

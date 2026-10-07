@@ -15,14 +15,17 @@ module simtop;
   logic[2:0] funct3;
   logic [6:0] funct7;
   logic[11:0] csr, imm;
+  logic [19:0] imm_u;
   logic[4:0] shamt;
-  logic alusrc
+  logic alusrc;
   logic regwrite;
   logic[1:0] regsel;
   logic[3:0] aluop;
   logic gpio_we;
+  int errors = 0;
 
 
+  /*
 	top dut
 	(
 		//////////// CLOCK //////////
@@ -50,6 +53,7 @@ module simtop;
 		.HEX6(HEX6),
 		.HEX7(HEX7)
 	);
+  */
 
 
   instr_decode instr_decode(.instruction(instruction),
@@ -61,14 +65,15 @@ module simtop;
     .funct7(funct7),
     .csr(csr),
     .imm(imm),
-    .shamt(shamt));
+    .shamt(shamt),
+    .imm_u(imm_u));
 
   control_unit control_unit(
     .opcode(opcode),
     .funct3(funct3),
     .funct7(funct7),
     .csr(csr),
-    .alusrc(aluscr),
+    .alusrc(alusrc),
     .regwrite(regwrite),
     .regsel(regsel),
     .aluop(aluop),
@@ -90,6 +95,10 @@ module simtop;
     */
     instruction = 32'b0110011;
     #10;
+    if (alusrc != 1'b0 && gpio_we != 1'b0 && regsel != 2'b10 && regwrite != 1'b1) begin
+      $display("R type has wrong control signals");
+      errors++;
+    end
 
 
     /*
@@ -97,6 +106,10 @@ module simtop;
     */
     instruction = 32'b0010011;
     #10;
+    if (alusrc != 1'b1 && gpio_we != 1'b0 && regsel != 2'b10 && regwrite != 1'b1) begin
+      $display("I type has wrong control signals");
+      errors++;
+    end
 
     /*
     * testing csr signals
@@ -109,6 +122,12 @@ module simtop;
     */
     instruction = 32'b0110111;
     #10;
+    if (gpio_we != 1'b0 && regsel != 2'b01 && regwrite != 1'b1) begin
+      $display("U type has wrong control signals");
+      errors++;
+    end
+
+    $display("%d errors were detected", errors);
 
   end
 	
