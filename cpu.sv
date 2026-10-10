@@ -1,4 +1,4 @@
-module cpu(input logic clk, logic rst, input logic[17:0] io_in, output logic [31:0] io_out);
+module cpu(input logic clk, input logic rst, input logic[17:0] io_in, output logic [31:0] io_out);
   logic[31:0] instruction_mem [4095:0];
   logic[31:0] instruction_EX;
   initial $readmemh("hexcode.txt", instruction_mem);

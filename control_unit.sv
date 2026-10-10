@@ -10,7 +10,13 @@ module control_unit(
   output logic gpio_we
   );
 
-  always_comb
+  always_comb begin
+    // default values
+    alusrc = 1'b0;
+    regwrite = 1'b0;
+    regsel = 2'b10;
+    aluop = 4'b0000;
+    gpio_we = 1'b0;
     if (opcode == 7'b0110011) begin
       // this is an R-type
       regwrite = 1'b1;
@@ -86,5 +92,6 @@ module control_unit(
       gpio_we = 1'b0;
       regwrite = 1'b0;
     end
+  end
 
 endmodule
