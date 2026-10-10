@@ -49,12 +49,25 @@ module top (
 
 	/* LED state register, 0 means going left, 1 means going right */
 	logic ledstate;
+  logic [31:0] hex_displays;
 
 
 //=======================================================
 //  Behavioral coding
 //=======================================================
 
+  // wire up CPU
+  cpu cpu(.clk(CLOCK_50), .rst(1'b1), .io_in(SW), .io_out(hex_displays));
+
+  // wire up hex displays to decoder
+  hexdriver driver1(.val(hex_displays[3:0]), .HEX(HEX0));
+  hexdriver driver2(.val(hex_displays[7:4]), .HEX(HEX1));
+  hexdriver driver3(.val(hex_displays[11:8]), .HEX(HEX2));
+  hexdriver driver4(.val(hex_displays[15:12]), .HEX(HEX3));
+  hexdriver driver5(.val(hex_displays[19:16]), .HEX(HEX4));
+  hexdriver driver6(.val(hex_displays[23:20]), .HEX(HEX5));
+  hexdriver driver7(.val(hex_displays[27:24]), .HEX(HEX6));
+  hexdriver driver8(.val(hex_displays[31:28]), .HEX(HEX7));
 
 	initial begin
 		clkdiv = 26'h0;

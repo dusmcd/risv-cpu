@@ -25,7 +25,6 @@ module simtop;
   int errors = 0;
 
 
-  /*
 	top dut
 	(
 		//////////// CLOCK //////////
@@ -53,7 +52,6 @@ module simtop;
 		.HEX6(HEX6),
 		.HEX7(HEX7)
 	);
-  */
 
 
   instr_decode instr_decode(.instruction(instruction),
@@ -114,8 +112,19 @@ module simtop;
     /*
     * testing csr signals
     */
-    instruction = 32'b1110011;
+    instruction = 32'hF00012F3;
     #10;
+    if (gpio_we != 1'b0 && regsel != 2'b0 && regwrite != 1'b1) begin
+      $display("csrrw io_in instruction has wrong control signals");
+      errors++;
+    end
+
+    instruction = 32'hF0229073;
+    #10;
+    if (gpio_we != 1'b1) begin
+      $display("csrrw io_out instruction has wrong control signals");
+      errors++;
+    end
 
     /*
     * testing u-type signals
