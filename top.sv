@@ -57,7 +57,7 @@ module top (
 //=======================================================
 
   // wire up CPU
-  cpu cpu(.clk(CLOCK_50), .rst(1'b1), .io_in(SW), .io_out(hex_displays));
+  cpu cpu(.clk(CLOCK_50), .rst(KEY[0]), .io_in(SW), .io_out(hex_displays));
 
   // wire up hex displays to decoder
   hexdriver driver1(.val(hex_displays[3:0]), .HEX(HEX0));
