@@ -17,5 +17,6 @@ module instr_decode( input logic[31:0] instruction,
   assign csr = instruction[31:20];
   assign imm = instruction[31:20];
   assign shamt = instruction[24:20];
+  assign imm_u = instruction[31:12];
 
 endmodule
