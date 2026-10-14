@@ -98,6 +98,20 @@ module simtop;
       errors++;
     end
 
+    // add instruction
+    instruction = 32'h006282B3;
+    #10;
+
+    if (alusrc != 1'b0 && gpio_we != 1'b0 && regsel != 2'b10 && regwrite != 1'b1) begin
+      $display("add instruction has wrong control signals");
+      errors++;
+    end
+    if (aluop != 4'b0011) begin
+      $display("add instruction has wrong aluop code. Expected=%d, got=%d", 4'b0011, aluop);
+      errors++;
+    end
+
+
 
     /*
     * testing i-type signals
@@ -135,6 +149,14 @@ module simtop;
       $display("U type has wrong control signals");
       errors++;
     end
+
+    instruction = 32'h1999A5B7;
+    #10;
+    if (imm_u != 20'h1999A) begin
+      $display("lui instruction has wrong immediate value");
+      errors++;
+    end
+
 
     $display("%d errors were detected", errors);
 

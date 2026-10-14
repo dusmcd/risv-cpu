@@ -10,211 +10,238 @@ z2
 cModel Technology
 Z0 d/acct/dm99/csce_611/lab3/lab_riu
 T_opt
-!s110 1791647388
-VOHS^_:Lb0<G]:8DLWKJ6F2
-04 6 4 work simtop fast 0
-=1-000ae431a4f1-6aca5e9c-13af9-19698
-o-quiet -auto_acc_if_foreign -work work
-Z1 tCvgOpt 0
+Z1 !s110 1792011321
+VYzF6kd6[BdJ^TEXJFle4K1
+Z2 04 6 4 work simtop fast 0
+=1-000ae431a4f1-6acfec39-c983e-202b8e
+Z3 o-quiet -auto_acc_if_foreign -work work
+Z4 tCvgOpt 0
 n@_opt
-OL;O;2020.1;71
+Z5 OL;O;2020.1;71
+T_opt1
+!s110 1792007094
+V]f_HQc]R2f7XQPK_jeO`H2
+Z6 04 3 4 work top fast 0
+=1-000ae431a4f1-6acfdbb5-e5319-1f40f1
+o-quiet -auto_acc_if_foreign -work work +acc
+R4
+n@_opt1
+R5
+R0
+T_opt2
+!s110 1792008458
+V?:j_^<lC<eblmU:aS?3Ob0
+04 3 4 work alu fast 0
+04 12 4 work control_unit fast 0
+04 3 4 work cpu fast 0
+04 9 4 work hexdriver fast 0
+04 12 4 work instr_decode fast 0
+04 7 4 work regfile fast 0
+R2
+R6
+=1-000ae431a4f1-6acfe10a-7cbd8-1f8966
+R3
+R4
+n@_opt2
+R5
+R0
 valu
-Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z3 !s110 1791647387
+Z7 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+R1
 !i10b 1
 !s100 Fz;21dl2PMZ6MFeGeLCUd1
-Z4 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Z8 !s11b Dg1SIo80bB@j0V0VzS_@n1
 Idkda=b6UUa[8UodDQhYLI2
-Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z9 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
 w1695668374
 8alu.sv
 Falu.sv
-!i122 22
+!i122 45
 L0 7 48
-Z6 OL;L;2020.1;71
+Z10 OL;L;2020.1;71
 r1
 !s85 0
 31
-Z7 !s108 1791647387.000000
-Z8 !s107 top.sv|simtop.sv|regfile.sv|instr_decode.sv|hexdriver.sv|cpu.sv|control_unit.sv|alu.sv|
-Z9 !s90 -pedanticerrors|-lint|-hazards|-source|-stats=all|alu.sv|control_unit.sv|cpu.sv|hexdriver.sv|instr_decode.sv|regfile.sv|simtop.sv|top.sv|
+Z11 !s108 1792011321.000000
+Z12 !s107 top.sv|simtop.sv|regfile.sv|instr_decode.sv|hexdriver.sv|cpu.sv|control_unit.sv|alu.sv|
+Z13 !s90 -pedanticerrors|-lint|-hazards|-source|-stats=all|alu.sv|control_unit.sv|cpu.sv|hexdriver.sv|instr_decode.sv|regfile.sv|simtop.sv|top.sv|
 !i113 0
-Z10 o-pedanticerrors -lint -hazards -source -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R1
+Z14 o-pedanticerrors -lint -hazards -source -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R4
 vcontrol_unit
-R2
-R3
+R7
+R1
 !i10b 1
 !s100 QdKE9=dHiD_l4zjLB:fiM1
-R4
+R8
 I64`5?cl<@GKgCFo=49?@30
-R5
+R9
 S1
 R0
 w1791647348
 8control_unit.sv
 Fcontrol_unit.sv
-!i122 22
+!i122 45
 L0 1 97
-R6
+R10
 r1
 !s85 0
 31
-R7
-R8
-R9
+R11
+R12
+R13
 !i113 0
-R10
-R1
+R14
+R4
 vcpu
-R2
-R3
+R7
+R1
 !i10b 1
 !s100 `3cScmK_EhEA6_SCBT4TB3
-R4
+R8
 I`?]bFn_X`oI8BGfORG>R>0
-R5
+R9
 S1
 R0
 w1791647021
 8cpu.sv
 Fcpu.sv
-!i122 22
+!i122 45
 L0 1 125
-R6
+R10
 r1
 !s85 0
 31
-R7
-R8
-R9
+R11
+R12
+R13
 !i113 0
-R10
-R1
-vhexdriver
-R2
-R3
-!i10b 1
-!s100 <BHPmE[n3d[d<zM;TbYC73
+R14
 R4
-IK;i5G]im0`V:BVGXab_nU1
-R5
+vhexdriver
+R7
+R1
+!i10b 1
+!s100 D2c2kcVgaE;`nin0>[l^f2
+R8
+I6;Oke1=L21>8Hl1?jdV3@3
+R9
 S1
 R0
-w1791643202
+w1791823549
 8hexdriver.sv
 Fhexdriver.sv
-!i122 22
+!i122 45
 L0 1 23
-R6
+R10
 r1
 !s85 0
 31
-R7
-R8
-R9
+R11
+R12
+R13
 !i113 0
-R10
-R1
+R14
+R4
 vinstr_decode
-R2
-R3
+R7
+R1
 !i10b 1
 !s100 1W<DOcfcz8R1Uo1ohTP582
-R4
+R8
 I=YO<CY9^K^[GiZP[G[TDa3
-R5
+R9
 S1
 R0
 w1791402280
 8instr_decode.sv
 Finstr_decode.sv
-!i122 22
+!i122 45
 L0 1 21
-R6
+R10
 r1
 !s85 0
 31
-R7
-R8
-R9
+R11
+R12
+R13
 !i113 0
-R10
-R1
+R14
+R4
 vregfile
-R2
-R3
+R7
+R1
 !i10b 1
 !s100 ?^aWIU5R`P?QnPdE@RGJe0
-R4
+R8
 IRDSL9iG2]ma^CoM2hhRo:0
-R5
+R9
 S1
 R0
 w1791403888
 8regfile.sv
 Fregfile.sv
-!i122 22
+!i122 45
 L0 3 38
-R6
+R10
 r1
 !s85 0
 31
-R7
-R8
-R9
+R11
+R12
+R13
 !i113 0
-R10
-R1
-vsimtop
-R2
-R3
-!i10b 1
-!s100 0C4GY5YN;5YMAD>GGHach3
+R14
 R4
-IQ?kSWL3bCk8[62gIf>@;F3
-R5
+vsimtop
+R7
+R1
+!i10b 1
+!s100 ghTfKJjzb@LQ;mo]8<iF50
+R8
+I@ceHh]f5P<7H;4nV1kNlJ0
+R9
 S1
 R0
-w1791645823
+w1792011316
 8simtop.sv
 Fsimtop.sv
-!i122 22
-L0 6 147
-R6
+!i122 45
+L0 6 169
+R10
 r1
 !s85 0
 31
-R7
-R8
-R9
+R11
+R12
+R13
 !i113 0
-R10
-R1
-vtop
-R2
-R3
-!i10b 1
-!s100 gj;Mm8A02YJ@caGP=lGI10
+R14
 R4
-IoEghz16RdA3ZES1eY5b_]3
-R5
+vtop
+R7
+R1
+!i10b 1
+!s100 HH12>h9Yg>NkeD7eNCnJ30
+R8
+IS=2X3:Fj`lgOGgDD^mHPd2
+R9
 S1
 R0
-w1791646036
+w1791823603
 8top.sv
 Ftop.sv
-!i122 22
+!i122 45
 L0 6 104
-R6
+R10
 r1
 !s85 0
 31
-R7
-R8
-R9
+R11
+R12
+R13
 !i113 0
-R10
-R1
+R14
+R4
