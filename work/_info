@@ -10,10 +10,10 @@ z2
 cModel Technology
 Z0 d/acct/dm99/csce_611/lab3/lab_riu
 T_opt
-Z1 !s110 1792011321
-VYzF6kd6[BdJ^TEXJFle4K1
+Z1 !s110 1792156009
+V3;UJJMA^e3Zb;T6Ii_eHJ1
 Z2 04 6 4 work simtop fast 0
-=1-000ae431a4f1-6acfec39-c983e-202b8e
+=1-000ae431a4f1-6ad22169-bf7a5-34bda9
 Z3 o-quiet -auto_acc_if_foreign -work work
 Z4 tCvgOpt 0
 n@_opt
@@ -58,13 +58,13 @@ R0
 w1695668374
 8alu.sv
 Falu.sv
-!i122 45
+!i122 48
 L0 7 48
 Z10 OL;L;2020.1;71
 r1
 !s85 0
 31
-Z11 !s108 1792011321.000000
+Z11 !s108 1792156009.000000
 Z12 !s107 top.sv|simtop.sv|regfile.sv|instr_decode.sv|hexdriver.sv|cpu.sv|control_unit.sv|alu.sv|
 Z13 !s90 -pedanticerrors|-lint|-hazards|-source|-stats=all|alu.sv|control_unit.sv|cpu.sv|hexdriver.sv|instr_decode.sv|regfile.sv|simtop.sv|top.sv|
 !i113 0
@@ -83,7 +83,7 @@ R0
 w1791647348
 8control_unit.sv
 Fcontrol_unit.sv
-!i122 45
+!i122 48
 L0 1 97
 R10
 r1
@@ -108,7 +108,7 @@ R0
 w1791647021
 8cpu.sv
 Fcpu.sv
-!i122 45
+!i122 48
 L0 1 125
 R10
 r1
@@ -133,7 +133,7 @@ R0
 w1791823549
 8hexdriver.sv
 Fhexdriver.sv
-!i122 45
+!i122 48
 L0 1 23
 R10
 r1
@@ -149,17 +149,17 @@ vinstr_decode
 R7
 R1
 !i10b 1
-!s100 1W<DOcfcz8R1Uo1ohTP582
+!s100 ALi0DKQlm1PMizgfOUC7P1
 R8
-I=YO<CY9^K^[GiZP[G[TDa3
+IR28W5Qb?:ZHe2U0j0Qel^0
 R9
 S1
 R0
-w1791402280
+w1792017074
 8instr_decode.sv
 Finstr_decode.sv
-!i122 45
-L0 1 21
+!i122 48
+L0 1 22
 R10
 r1
 !s85 0
@@ -183,7 +183,7 @@ R0
 w1791403888
 8regfile.sv
 Fregfile.sv
-!i122 45
+!i122 48
 L0 3 38
 R10
 r1
@@ -199,17 +199,17 @@ vsimtop
 R7
 R1
 !i10b 1
-!s100 ghTfKJjzb@LQ;mo]8<iF50
+!s100 ^W^nPZoEbkKhOmXbRN8nl0
 R8
-I@ceHh]f5P<7H;4nV1kNlJ0
+IEWAmoFL6oZT[@C3f;I2[V2
 R9
 S1
 R0
-w1792011316
+w1792156005
 8simtop.sv
 Fsimtop.sv
-!i122 45
-L0 6 169
+!i122 48
+L0 6 82
 R10
 r1
 !s85 0
@@ -233,7 +233,7 @@ R0
 w1791823603
 8top.sv
 Ftop.sv
-!i122 45
+!i122 48
 L0 6 104
 R10
 r1
