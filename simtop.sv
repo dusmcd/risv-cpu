@@ -54,29 +54,29 @@ module simtop;
 	);
 
 
-  instr_decode instr_decode(.instruction(instruction),
-    .opcode(opcode),
-    .rd(rd),
-    .rs1(rs1),
-    .rs2(rs2),
-    .funct3(funct3),
-    .funct7(funct7),
-    .csr(csr),
-    .imm(imm),
-    .shamt(shamt),
-    .imm_u(imm_u));
+  // instr_decode instr_decode(.instruction(instruction),
+  //   .opcode(opcode),
+  //   .rd(rd),
+  //   .rs1(rs1),
+  //   .rs2(rs2),
+  //   .funct3(funct3),
+  //   .funct7(funct7),
+  //   .csr(csr),
+  //   .imm(imm),
+  //   .shamt(shamt),
+  //   .imm_u(imm_u));
 
-  control_unit control_unit(
-    .opcode(opcode),
-    .funct3(funct3),
-    .funct7(funct7),
-    .csr(csr),
-    .alusrc(alusrc),
-    .regwrite(regwrite),
-    .regsel(regsel),
-    .aluop(aluop),
-    .gpio_we(gpio_we)
-  );
+  // control_unit control_unit(
+  //   .opcode(opcode),
+  //   .funct3(funct3),
+  //   .funct7(funct7),
+  //   .csr(csr),
+  //   .alusrc(alusrc),
+  //   .regwrite(regwrite),
+  //   .regsel(regsel),
+  //   .aluop(aluop),
+  //   .gpio_we(gpio_we)
+  // );
 
 	// pulse reset (active low)
 	initial begin
@@ -86,87 +86,100 @@ module simtop;
 	end
 
   initial begin
-    // test control signals 
-    
-    /*
-    * testing r-type signals
-    */
-    instruction = 32'b0110011;
-    #10;
-    if (alusrc != 1'b0 && gpio_we != 1'b0 && regsel != 2'b10 && regwrite != 1'b1) begin
-      $display("R type has wrong control signals");
-      errors++;
-    end
-
-    // add instruction
-    instruction = 32'h006282B3;
-    #10;
-
-    if (alusrc != 1'b0 && gpio_we != 1'b0 && regsel != 2'b10 && regwrite != 1'b1) begin
-      $display("add instruction has wrong control signals");
-      errors++;
-    end
-    if (aluop != 4'b0011) begin
-      $display("add instruction has wrong aluop code. Expected=%d, got=%d", 4'b0011, aluop);
-      errors++;
-    end
-
-
-
-    /*
-    * testing i-type signals
-    */
-    instruction = 32'b0010011;
-    #10;
-    if (alusrc != 1'b1 && gpio_we != 1'b0 && regsel != 2'b10 && regwrite != 1'b1) begin
-      $display("I type has wrong control signals");
-      errors++;
-    end
-
-    /*
-    * testing csr signals
-    */
-    instruction = 32'hF00012F3;
-    #10;
-    if (gpio_we != 1'b0 && regsel != 2'b0 && regwrite != 1'b1) begin
-      $display("csrrw io_in instruction has wrong control signals");
-      errors++;
-    end
-
-    instruction = 32'hF0229073;
-    #10;
-    if (gpio_we != 1'b1) begin
-      $display("csrrw io_out instruction has wrong control signals");
-      errors++;
-    end
-
-    /*
-    * testing u-type signals
-    */
-    instruction = 32'b0110111;
-    #10;
-    if (gpio_we != 1'b0 && regsel != 2'b01 && regwrite != 1'b1) begin
-      $display("U type has wrong control signals");
-      errors++;
-    end
-
-    instruction = 32'h1999A5B7;
-    #10;
-    if (imm_u != 20'h1999A) begin
-      $display("lui instruction has wrong immediate value");
-      errors++;
-    end
-
-
-    $display("%d errors were detected", errors);
-
+    #1;
+    $readmemh("testbench.txt", dut.cpu.instruction_mem);
   end
+
+  // initial begin
+  //   // test control signals 
+    
+  //   /*
+  //   * testing r-type signals
+  //   */
+  //   instruction = 32'b0110011;
+  //   #10;
+  //   if (alusrc != 1'b0 && gpio_we != 1'b0 && regsel != 2'b10 && regwrite != 1'b1) begin
+  //     $display("R type has wrong control signals");
+  //     errors++;
+  //   end
+
+  //   // add instruction
+  //   instruction = 32'h006282B3;
+  //   #10;
+
+  //   if (alusrc != 1'b0 && gpio_we != 1'b0 && regsel != 2'b10 && regwrite != 1'b1) begin
+  //     $display("add instruction has wrong control signals");
+  //     errors++;
+  //   end
+  //   if (aluop != 4'b0011) begin
+  //     $display("add instruction has wrong aluop code. Expected=%d, got=%d", 4'b0011, aluop);
+  //     errors++;
+  //   end
+
+
+
+  //   /*
+  //   * testing i-type signals
+  //   */
+  //   instruction = 32'b0010011;
+  //   #10;
+  //   if (alusrc != 1'b1 && gpio_we != 1'b0 && regsel != 2'b10 && regwrite != 1'b1) begin
+  //     $display("I type has wrong control signals");
+  //     errors++;
+  //   end
+
+  //   /*
+  //   * testing csr signals
+  //   */
+  //   instruction = 32'hF00012F3;
+  //   #10;
+  //   if (gpio_we != 1'b0 && regsel != 2'b0 && regwrite != 1'b1) begin
+  //     $display("csrrw io_in instruction has wrong control signals");
+  //     errors++;
+  //   end
+
+  //   instruction = 32'hF0229073;
+  //   #10;
+  //   if (gpio_we != 1'b1) begin
+  //     $display("csrrw io_out instruction has wrong control signals");
+  //     errors++;
+  //   end
+
+  //   /*
+  //   * testing u-type signals
+  //   */
+  //   instruction = 32'b0110111;
+  //   #10;
+  //   if (gpio_we != 1'b0 && regsel != 2'b01 && regwrite != 1'b1) begin
+  //     $display("U type has wrong control signals");
+  //     errors++;
+  //   end
+
+  //   instruction = 32'h1999A5B7;
+  //   #10;
+  //   if (imm_u != 20'h1999A) begin
+  //     $display("lui instruction has wrong immediate value");
+  //     errors++;
+  //   end
+
+
+  //   $display("%d errors were detected", errors);
+
+  // end
 	
 	// drive clock
 	always begin
 		clk <= 1'b0; #5;
 		clk <= 1'b1; #5;
 	end
+
+  always @(negedge clk) begin
+    if (dut.cpu.PC_FETCH <= 12'd25) begin
+      $display("instruction_EX: %h", dut.cpu.instruction_EX);
+      for (int i = 0; i < 32; i++)
+        $display("x%d: %h", i, dut.cpu.regfile.mem[i]);    
+    end
+  end
 	
 	// assign simulated switch values
 	assign SW = 18'd12345;
