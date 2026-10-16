@@ -66,6 +66,14 @@ module simtop;
     $readmemh("testbench.txt", dut.cpu.instruction_mem);
   end
 
+  int NUM_CLOCKS = 27;
+  initial begin
+    wait(KEY[0] == 1'b1);
+    repeat(NUM_CLOCKS) @(negedge clk);
+    #1;
+    $finish;
+  end
+
  	
 	// drive clock
 	always begin
@@ -73,12 +81,12 @@ module simtop;
 		clk <= 1'b1; #5;
 	end
 
+  int clock_num = 0;
   always @(negedge clk) begin
-    if (dut.cpu.PC_FETCH <= 12'd28) begin
-      $display("instruction_EX: %h", dut.cpu.instruction_EX);
-      for (int i = 0; i < 32; i++)
-        $display("x%d: %h", i, dut.cpu.regfile.mem[i]);    
-    end
+    $display("clock #: %d   instruction_EX: %h", clock_num, dut.cpu.instruction_EX);
+    clock_num++;
+    for (int i = 0; i < 32; i++)
+      $display("x%d: %h", i, dut.cpu.regfile.mem[i]);    
   end
 	
 	// assign simulated switch values
