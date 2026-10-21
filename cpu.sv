@@ -29,6 +29,8 @@ module cpu(input logic clk, input logic rst, input logic[17:0] io_in, output log
   logic [31:0] upper_imm_EX;
   logic [31:0] upper_imm_WB;
   logic [31:0] alu_srcdata_EX;
+  logic stall_FETCH;
+  logic stall_EX;
 
   always_ff @(posedge clk) begin
     if(~rst) begin
@@ -38,6 +40,8 @@ module cpu(input logic clk, input logic rst, input logic[17:0] io_in, output log
 
     else begin
       instruction_EX <= instruction_mem[PC_FETCH];
+
+      // need to add logic to handle branch instructions
       PC_FETCH <= PC_FETCH + 12'b1;
     end
   end
@@ -66,10 +70,12 @@ module cpu(input logic clk, input logic rst, input logic[17:0] io_in, output log
     .funct7(funct7),
     .csr(csr),
     .alusrc(alusrc_EX),
+    .stall_EX(stall_EX),
     .regwrite(regwrite_EX),
     .regsel(regsel_EX),
     .aluop(aluop_EX),
-    .gpio_we(gpio_we)
+    .gpio_we(gpio_we),
+    .stall_FETCH(stall_FETCH)
   );
 
 
@@ -118,6 +124,9 @@ module cpu(input logic clk, input logic rst, input logic[17:0] io_in, output log
 
     // for writing switches to register
     io_WB <= {14'b0, io_in};
+
+    // delay the stall signal so that the next instruction will be a no op
+    stall_EX <= stall_FETCH;
 
     if (gpio_we) io_out <= rs1_data;
   end
