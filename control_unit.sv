@@ -3,15 +3,20 @@ module control_unit(
   input logic[2:0] funct3,
   input logic[6:0] funct7,
   input logic[11:0] csr,
+  input logic [11:0] PC_EX,
+  input logic [31:0] instruction_EX,
   input logic stall_EX,
   output logic alusrc,
   output logic regwrite,
   output logic[1:0] regsel,
   output logic[3:0] aluop,
-  output logic gpio_we
-  output logic stall_FETCH
+  output logic gpio_we,
+  output logic stall_FETCH,
+  output logic [31:0] jal_addr_EX,
+  output logic [1:0] pcsrc_EX
   );
 
+  logic [20:0] jal_offset_EX;
   always_comb begin
     // default values
     alusrc = 1'b0;
@@ -20,6 +25,9 @@ module control_unit(
     aluop = 4'b0000;
     gpio_we = 1'b0;
     stall_FETCH = 1'b0;
+    pcsrc_EX = 2'b0;
+    jal_addr_EX = 32'b0;
+    jal_offset_EX = 21'b0;
 
     if (stall_EX) begin
       // this will be a no op
@@ -28,6 +36,9 @@ module control_unit(
       regsel = 2'b00;
       aluop = 4'b0000;
       gpio_we = 1'b0;
+      pcsrc_EX = 2'b0;
+      stall_FETCH = 1'b0;
+      jal_addr_EX = 32'b0;
     end
     else begin
       if (opcode == 7'b0110011) begin
@@ -99,6 +110,19 @@ module control_unit(
         regwrite = 1'b1;
         alusrc = 1'bX; // not used in this instruction
         aluop = 4'bXXXX;
+      end
+
+      else if (opcode == 7'b1101111) begin
+        // this is the J-type
+        gpio_we = 1'b0;
+        regwrite = 1'b1;
+        alusrc = 1'bX;
+        aluop = 4'bXXXX;
+        regsel = 2'd3;
+        stall_FETCH  = 1'b1;
+        jal_offset_EX = {instruction_EX[31],instruction_EX[19:12],instruction_EX[20],instruction_EX[30:21],1'b0};
+        jal_addr_EX = PC_EX + jal_offset_EX[13:2];
+        pcsrc_EX = 2'b01;
       end
 
       else begin

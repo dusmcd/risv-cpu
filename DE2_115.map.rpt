@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2_115
-Wed Oct 21 16:01:29 2026
+Wed Oct 28 16:41:18 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -30,10 +30,11 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
  22. altsyncram Parameter Settings by Entity Instance
  23. lpm_mult Parameter Settings by Entity Instance
  24. Port Connectivity Checks: "cpu:cpu|alu:alu"
- 25. Port Connectivity Checks: "cpu:cpu|instr_decode:decoder"
- 26. Post-Synthesis Netlist Statistics for Top Partition
- 27. Elapsed Time Per Partition
- 28. Analysis & Synthesis Messages
+ 25. Port Connectivity Checks: "cpu:cpu|control_unit:control_unit"
+ 26. Port Connectivity Checks: "cpu:cpu|instr_decode:decoder"
+ 27. Post-Synthesis Netlist Statistics for Top Partition
+ 28. Elapsed Time Per Partition
+ 29. Analysis & Synthesis Messages
 
 
 
@@ -59,15 +60,15 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Oct 21 16:01:29 2026           ;
+; Analysis & Synthesis Status        ; Successful - Wed Oct 28 16:41:18 2026           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                      ; DE2_115                                         ;
 ; Top-level Entity Name              ; top                                             ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 1,550                                           ;
-;     Total combinational functions  ; 1,458                                           ;
-;     Dedicated logic registers      ; 278                                             ;
-; Total registers                    ; 278                                             ;
+; Total logic elements               ; 1,522                                           ;
+;     Total combinational functions  ; 1,418                                           ;
+;     Dedicated logic registers      ; 290                                             ;
+; Total registers                    ; 290                                             ;
 ; Total pins                         ; 108                                             ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 2,048                                           ;
@@ -190,14 +191,14 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                          ; Library ;
 +----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------+---------+
-; top.sv                           ; yes             ; User SystemVerilog HDL File        ; /acct/dm99/csce_611/lab3/lab_riu/top.sv                                               ;         ;
-; hexdriver.sv                     ; yes             ; User SystemVerilog HDL File        ; /acct/dm99/csce_611/lab3/lab_riu/hexdriver.sv                                         ;         ;
-; cpu.sv                           ; yes             ; Auto-Found SystemVerilog HDL File  ; /acct/dm99/csce_611/lab3/lab_riu/cpu.sv                                               ;         ;
-; hexcode.txt                      ; yes             ; Auto-Found File                    ; /acct/dm99/csce_611/lab3/lab_riu/hexcode.txt                                          ;         ;
-; instr_decode.sv                  ; yes             ; Auto-Found SystemVerilog HDL File  ; /acct/dm99/csce_611/lab3/lab_riu/instr_decode.sv                                      ;         ;
-; control_unit.sv                  ; yes             ; Auto-Found SystemVerilog HDL File  ; /acct/dm99/csce_611/lab3/lab_riu/control_unit.sv                                      ;         ;
-; regfile.sv                       ; yes             ; Auto-Found SystemVerilog HDL File  ; /acct/dm99/csce_611/lab3/lab_riu/regfile.sv                                           ;         ;
-; alu.sv                           ; yes             ; Auto-Found SystemVerilog HDL File  ; /acct/dm99/csce_611/lab3/lab_riu/alu.sv                                               ;         ;
+; top.sv                           ; yes             ; User SystemVerilog HDL File        ; /acct/dm99/csce_611/lab4/lab_riuj/top.sv                                              ;         ;
+; hexdriver.sv                     ; yes             ; User SystemVerilog HDL File        ; /acct/dm99/csce_611/lab4/lab_riuj/hexdriver.sv                                        ;         ;
+; cpu.sv                           ; yes             ; Auto-Found SystemVerilog HDL File  ; /acct/dm99/csce_611/lab4/lab_riuj/cpu.sv                                              ;         ;
+; hexcode.txt                      ; yes             ; Auto-Found File                    ; /acct/dm99/csce_611/lab4/lab_riuj/hexcode.txt                                         ;         ;
+; instr_decode.sv                  ; yes             ; Auto-Found SystemVerilog HDL File  ; /acct/dm99/csce_611/lab4/lab_riuj/instr_decode.sv                                     ;         ;
+; control_unit.sv                  ; yes             ; Auto-Found SystemVerilog HDL File  ; /acct/dm99/csce_611/lab4/lab_riuj/control_unit.sv                                     ;         ;
+; regfile.sv                       ; yes             ; Auto-Found SystemVerilog HDL File  ; /acct/dm99/csce_611/lab4/lab_riuj/regfile.sv                                          ;         ;
+; alu.sv                           ; yes             ; Auto-Found SystemVerilog HDL File  ; /acct/dm99/csce_611/lab4/lab_riuj/alu.sv                                              ;         ;
 ; altsyncram.tdf                   ; yes             ; Megafunction                       ; /usr/local/3rdparty/altera/18.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
 ; stratix_ram_block.inc            ; yes             ; Megafunction                       ; /usr/local/3rdparty/altera/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
 ; lpm_mux.inc                      ; yes             ; Megafunction                       ; /usr/local/3rdparty/altera/18.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
@@ -207,14 +208,14 @@ refer to the applicable agreement for further details.
 ; altrom.inc                       ; yes             ; Megafunction                       ; /usr/local/3rdparty/altera/18.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
 ; altram.inc                       ; yes             ; Megafunction                       ; /usr/local/3rdparty/altera/18.1/quartus/libraries/megafunctions/altram.inc            ;         ;
 ; altdpram.inc                     ; yes             ; Megafunction                       ; /usr/local/3rdparty/altera/18.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_mcc1.tdf           ; yes             ; Auto-Generated Megafunction        ; /acct/dm99/csce_611/lab3/lab_riu/db/altsyncram_mcc1.tdf                               ;         ;
+; db/altsyncram_mcc1.tdf           ; yes             ; Auto-Generated Megafunction        ; /acct/dm99/csce_611/lab4/lab_riuj/db/altsyncram_mcc1.tdf                              ;         ;
 ; lpm_mult.tdf                     ; yes             ; Megafunction                       ; /usr/local/3rdparty/altera/18.1/quartus/libraries/megafunctions/lpm_mult.tdf          ;         ;
 ; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; /usr/local/3rdparty/altera/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc       ;         ;
 ; multcore.inc                     ; yes             ; Megafunction                       ; /usr/local/3rdparty/altera/18.1/quartus/libraries/megafunctions/multcore.inc          ;         ;
 ; bypassff.inc                     ; yes             ; Megafunction                       ; /usr/local/3rdparty/altera/18.1/quartus/libraries/megafunctions/bypassff.inc          ;         ;
 ; altshift.inc                     ; yes             ; Megafunction                       ; /usr/local/3rdparty/altera/18.1/quartus/libraries/megafunctions/altshift.inc          ;         ;
-; db/mult_46t.tdf                  ; yes             ; Auto-Generated Megafunction        ; /acct/dm99/csce_611/lab3/lab_riu/db/mult_46t.tdf                                      ;         ;
-; db/mult_7dt.tdf                  ; yes             ; Auto-Generated Megafunction        ; /acct/dm99/csce_611/lab3/lab_riu/db/mult_7dt.tdf                                      ;         ;
+; db/mult_46t.tdf                  ; yes             ; Auto-Generated Megafunction        ; /acct/dm99/csce_611/lab4/lab_riuj/db/mult_46t.tdf                                     ;         ;
+; db/mult_7dt.tdf                  ; yes             ; Auto-Generated Megafunction        ; /acct/dm99/csce_611/lab4/lab_riuj/db/mult_7dt.tdf                                     ;         ;
 +----------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------------+---------+
 
 
@@ -223,20 +224,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 1,550          ;
+; Estimated Total logic elements              ; 1,522          ;
 ;                                             ;                ;
-; Total combinational functions               ; 1458           ;
+; Total combinational functions               ; 1418           ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 780            ;
-;     -- 3 input functions                    ; 541            ;
-;     -- <=2 input functions                  ; 137            ;
+;     -- 4 input functions                    ; 765            ;
+;     -- 3 input functions                    ; 532            ;
+;     -- <=2 input functions                  ; 121            ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 1134           ;
-;     -- arithmetic mode                      ; 324            ;
+;     -- normal mode                          ; 1082           ;
+;     -- arithmetic mode                      ; 336            ;
 ;                                             ;                ;
-; Total registers                             ; 278            ;
-;     -- Dedicated logic registers            ; 278            ;
+; Total registers                             ; 290            ;
+;     -- Dedicated logic registers            ; 290            ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
 ; I/O pins                                    ; 108            ;
@@ -245,8 +246,8 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 16             ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 315            ;
-; Total fan-out                               ; 6931           ;
+; Maximum fan-out                             ; 327            ;
+; Total fan-out                               ; 6830           ;
 ; Average fan-out                             ; 3.41           ;
 +---------------------------------------------+----------------+
 
@@ -256,15 +257,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                              ; Entity Name     ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------+-----------------+--------------+
-; |top                                         ; 1458 (60)           ; 278 (51)                  ; 2048        ; 16           ; 0       ; 8         ; 108  ; 0            ; |top                                                                             ; top             ; work         ;
-;    |cpu:cpu|                                 ; 1342 (268)          ; 227 (143)                 ; 2048        ; 16           ; 0       ; 8         ; 0    ; 0            ; |top|cpu:cpu                                                                     ; cpu             ; work         ;
-;       |alu:alu|                              ; 873 (702)           ; 0 (0)                     ; 0           ; 16           ; 0       ; 8         ; 0    ; 0            ; |top|cpu:cpu|alu:alu                                                             ; alu             ; work         ;
+; |top                                         ; 1418 (60)           ; 290 (51)                  ; 2048        ; 16           ; 0       ; 8         ; 108  ; 0            ; |top                                                                             ; top             ; work         ;
+;    |cpu:cpu|                                 ; 1302 (274)          ; 239 (155)                 ; 2048        ; 16           ; 0       ; 8         ; 0    ; 0            ; |top|cpu:cpu                                                                     ; cpu             ; work         ;
+;       |alu:alu|                              ; 854 (683)           ; 0 (0)                     ; 0           ; 16           ; 0       ; 8         ; 0    ; 0            ; |top|cpu:cpu|alu:alu                                                             ; alu             ; work         ;
 ;          |lpm_mult:Mult0|                    ; 79 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |top|cpu:cpu|alu:alu|lpm_mult:Mult0                                              ; lpm_mult        ; work         ;
 ;             |mult_7dt:auto_generated|        ; 79 (79)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |top|cpu:cpu|alu:alu|lpm_mult:Mult0|mult_7dt:auto_generated                      ; mult_7dt        ; work         ;
 ;          |lpm_mult:Mult1|                    ; 92 (0)              ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |top|cpu:cpu|alu:alu|lpm_mult:Mult1                                              ; lpm_mult        ; work         ;
 ;             |mult_46t:auto_generated|        ; 92 (92)             ; 0 (0)                     ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |top|cpu:cpu|alu:alu|lpm_mult:Mult1|mult_46t:auto_generated                      ; mult_46t        ; work         ;
-;       |control_unit:control_unit|            ; 87 (87)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:cpu|control_unit:control_unit                                           ; control_unit    ; work         ;
-;       |regfile:regfile|                      ; 114 (114)           ; 84 (84)                   ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:cpu|regfile:regfile                                                     ; regfile         ; work         ;
+;       |control_unit:control_unit|            ; 63 (63)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:cpu|control_unit:control_unit                                           ; control_unit    ; work         ;
+;       |regfile:regfile|                      ; 111 (111)           ; 84 (84)                   ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:cpu|regfile:regfile                                                     ; regfile         ; work         ;
 ;          |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:cpu|regfile:regfile|altsyncram:mem_rtl_0                                ; altsyncram      ; work         ;
 ;             |altsyncram_mcc1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:cpu|regfile:regfile|altsyncram:mem_rtl_0|altsyncram_mcc1:auto_generated ; altsyncram_mcc1 ; work         ;
 ;          |altsyncram:mem_rtl_1|              ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|cpu:cpu|regfile:regfile|altsyncram:mem_rtl_1                                ; altsyncram      ; work         ;
@@ -320,13 +321,14 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 ; cpu:cpu|upper_imm_WB[26]                    ; Stuck at GND due to stuck port data_in ;
 ; cpu:cpu|instruction_EX[11]                  ; Stuck at GND due to stuck port data_in ;
 ; cpu:cpu|writeaddr_WB[4]                     ; Stuck at GND due to stuck port data_in ;
+; cpu:cpu|stall_EX                            ; Stuck at GND due to stuck port data_in ;
 ; cpu:cpu|regfile:regfile|mem_rtl_0_bypass[9] ; Stuck at GND due to stuck port data_in ;
 ; cpu:cpu|regfile:regfile|mem_rtl_1_bypass[9] ; Stuck at GND due to stuck port data_in ;
 ; cpu:cpu|upper_imm_WB[30]                    ; Merged with cpu:cpu|upper_imm_WB[29]   ;
 ; cpu:cpu|instruction_EX[6,30]                ; Merged with cpu:cpu|instruction_EX[29] ;
 ; cpu:cpu|instruction_EX[1,4]                 ; Merged with cpu:cpu|instruction_EX[0]  ;
 ; cpu:cpu|instruction_EX[2]                   ; Merged with cpu:cpu|instruction_EX[19] ;
-; Total Number of Removed Registers = 39      ;                                        ;
+; Total Number of Removed Registers = 40      ;                                        ;
 +---------------------------------------------+----------------------------------------+
 
 
@@ -347,12 +349,12 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 278   ;
-; Number of registers using Synchronous Clear  ; 28    ;
-; Number of registers using Synchronous Load   ; 11    ;
+; Total registers                              ; 290   ;
+; Number of registers using Synchronous Clear  ; 24    ;
+; Number of registers using Synchronous Load   ; 5     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 32    ;
+; Number of registers using Clock Enable       ; 44    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -461,25 +463,24 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 +----------------------------------------------+-----------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |top|cpu:cpu|regsel_WB[0]                       ;
-; 16:1               ; 7 bits    ; 70 LEs        ; 70 LEs               ; 0 LEs                  ; Yes        ; |top|cpu:cpu|alu_output_WB[19]                  ;
-; 15:1               ; 8 bits    ; 80 LEs        ; 72 LEs               ; 8 LEs                  ; Yes        ; |top|cpu:cpu|alu_output_WB[12]                  ;
-; 16:1               ; 4 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; Yes        ; |top|cpu:cpu|alu_output_WB[4]                   ;
-; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |top|cpu:cpu|alu_output_WB[27]                  ;
-; 17:1               ; 2 bits    ; 22 LEs        ; 20 LEs               ; 2 LEs                  ; Yes        ; |top|cpu:cpu|alu_output_WB[3]                   ;
-; 18:1               ; 2 bits    ; 24 LEs        ; 20 LEs               ; 4 LEs                  ; Yes        ; |top|cpu:cpu|alu_output_WB[28]                  ;
-; 4:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; No         ; |top|cpu:cpu|writedata_WB[28]                   ;
-; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |top|cpu:cpu|writedata_WB[4]                    ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top|cpu:cpu|writedata_WB[17]                   ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|cpu:cpu|control_unit:control_unit|aluop[1] ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |top|cpu:cpu|regfile:regfile|readdata1[27]      ;
-; 5:1                ; 31 bits   ; 93 LEs        ; 62 LEs               ; 31 LEs                 ; No         ; |top|cpu:cpu|comb                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |top|cpu:cpu|regsel_WB[0]                  ;
+; 16:1               ; 7 bits    ; 70 LEs        ; 70 LEs               ; 0 LEs                  ; Yes        ; |top|cpu:cpu|alu_output_WB[19]             ;
+; 15:1               ; 8 bits    ; 80 LEs        ; 72 LEs               ; 8 LEs                  ; Yes        ; |top|cpu:cpu|alu_output_WB[13]             ;
+; 16:1               ; 4 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; Yes        ; |top|cpu:cpu|alu_output_WB[4]              ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |top|cpu:cpu|alu_output_WB[25]             ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 20 LEs               ; 2 LEs                  ; Yes        ; |top|cpu:cpu|alu_output_WB[2]              ;
+; 18:1               ; 2 bits    ; 24 LEs        ; 22 LEs               ; 2 LEs                  ; Yes        ; |top|cpu:cpu|alu_output_WB[28]             ;
+; 4:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; No         ; |top|cpu:cpu|writedata_WB[23]              ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |top|cpu:cpu|writedata_WB[15]              ;
+; 5:1                ; 12 bits   ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; No         ; |top|cpu:cpu|writedata_WB[9]               ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |top|cpu:cpu|regfile:regfile|readdata1[27] ;
+; 5:1                ; 31 bits   ; 93 LEs        ; 62 LEs               ; 31 LEs                 ; No         ; |top|cpu:cpu|comb                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------+
@@ -763,6 +764,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cpu:cpu|control_unit:control_unit"                                                                 ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                ; Type   ; Severity ; Details                                                                             ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+; jal_addr_EX[31..12] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "cpu:cpu|instr_decode:decoder"                                                        ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
@@ -778,28 +788,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 108                         ;
-; cycloneiii_ff         ; 278                         ;
-;     ENA               ; 32                          ;
+; cycloneiii_ff         ; 290                         ;
+;     ENA               ; 44                          ;
 ;     SCLR              ; 24                          ;
-;     SCLR SLD          ; 4                           ;
-;     SLD               ; 7                           ;
-;     plain             ; 211                         ;
-; cycloneiii_lcell_comb ; 1467                        ;
-;     arith             ; 324                         ;
-;         2 data inputs ; 70                          ;
+;     SLD               ; 5                           ;
+;     plain             ; 217                         ;
+; cycloneiii_lcell_comb ; 1427                        ;
+;     arith             ; 336                         ;
+;         2 data inputs ; 82                          ;
 ;         3 data inputs ; 254                         ;
-;     normal            ; 1143                        ;
-;         0 data inputs ; 3                           ;
+;     normal            ; 1091                        ;
+;         0 data inputs ; 4                           ;
 ;         1 data inputs ; 13                          ;
-;         2 data inputs ; 60                          ;
-;         3 data inputs ; 287                         ;
-;         4 data inputs ; 780                         ;
+;         2 data inputs ; 31                          ;
+;         3 data inputs ; 278                         ;
+;         4 data inputs ; 765                         ;
 ; cycloneiii_mac_mult   ; 8                           ;
 ; cycloneiii_mac_out    ; 8                           ;
 ; cycloneiii_ram_block  ; 64                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 17.80                       ;
-; Average LUT depth     ; 10.19                       ;
+; Max LUT depth         ; 16.00                       ;
+; Average LUT depth     ; 9.42                        ;
 +-----------------------+-----------------------------+
 
 
@@ -818,43 +827,45 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Wed Oct 21 16:01:16 2026
+    Info: Processing started: Wed Oct 28 16:41:06 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE2_115 -c DE2_115
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file top.sv
-    Info (12023): Found entity 1: top File: /acct/dm99/csce_611/lab3/lab_riu/top.sv Line: 6
+    Info (12023): Found entity 1: top File: /acct/dm99/csce_611/lab4/lab_riuj/top.sv Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file hexdriver.sv
-    Info (12023): Found entity 1: hexdriver File: /acct/dm99/csce_611/lab3/lab_riu/hexdriver.sv Line: 1
+    Info (12023): Found entity 1: hexdriver File: /acct/dm99/csce_611/lab4/lab_riuj/hexdriver.sv Line: 1
 Info (12127): Elaborating entity "top" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at top.sv(73): truncated value with size 26 to match size of target (24) File: /acct/dm99/csce_611/lab3/lab_riu/top.sv Line: 73
-Warning (10230): Verilog HDL assignment warning at top.sv(84): truncated value with size 32 to match size of target (24) File: /acct/dm99/csce_611/lab3/lab_riu/top.sv Line: 84
+Warning (10230): Verilog HDL assignment warning at top.sv(73): truncated value with size 26 to match size of target (24) File: /acct/dm99/csce_611/lab4/lab_riuj/top.sv Line: 73
+Warning (10230): Verilog HDL assignment warning at top.sv(84): truncated value with size 32 to match size of target (24) File: /acct/dm99/csce_611/lab4/lab_riuj/top.sv Line: 84
 Warning (12125): Using design file cpu.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: cpu File: /acct/dm99/csce_611/lab3/lab_riu/cpu.sv Line: 1
-Info (12128): Elaborating entity "cpu" for hierarchy "cpu:cpu" File: /acct/dm99/csce_611/lab3/lab_riu/top.sv Line: 60
-Warning (10850): Verilog HDL warning at cpu.sv(4): number of words (37) in memory file does not match the number of elements in the address range [0:4095] File: /acct/dm99/csce_611/lab3/lab_riu/cpu.sv Line: 4
-Warning (10030): Net "instruction_mem.data_a" at cpu.sv(2) has no driver or initial value, using a default initial value '0' File: /acct/dm99/csce_611/lab3/lab_riu/cpu.sv Line: 2
-Warning (10030): Net "instruction_mem.waddr_a" at cpu.sv(2) has no driver or initial value, using a default initial value '0' File: /acct/dm99/csce_611/lab3/lab_riu/cpu.sv Line: 2
-Warning (10030): Net "instruction_mem.we_a" at cpu.sv(2) has no driver or initial value, using a default initial value '0' File: /acct/dm99/csce_611/lab3/lab_riu/cpu.sv Line: 2
+    Info (12023): Found entity 1: cpu File: /acct/dm99/csce_611/lab4/lab_riuj/cpu.sv Line: 1
+Info (12128): Elaborating entity "cpu" for hierarchy "cpu:cpu" File: /acct/dm99/csce_611/lab4/lab_riuj/top.sv Line: 60
+Warning (10850): Verilog HDL warning at cpu.sv(4): number of words (37) in memory file does not match the number of elements in the address range [0:4095] File: /acct/dm99/csce_611/lab4/lab_riuj/cpu.sv Line: 4
+Warning (10230): Verilog HDL assignment warning at cpu.sv(50): truncated value with size 32 to match size of target (12) File: /acct/dm99/csce_611/lab4/lab_riuj/cpu.sv Line: 50
+Warning (10230): Verilog HDL assignment warning at cpu.sv(119): truncated value with size 52 to match size of target (32) File: /acct/dm99/csce_611/lab4/lab_riuj/cpu.sv Line: 119
+Warning (10030): Net "instruction_mem.data_a" at cpu.sv(2) has no driver or initial value, using a default initial value '0' File: /acct/dm99/csce_611/lab4/lab_riuj/cpu.sv Line: 2
+Warning (10030): Net "instruction_mem.waddr_a" at cpu.sv(2) has no driver or initial value, using a default initial value '0' File: /acct/dm99/csce_611/lab4/lab_riuj/cpu.sv Line: 2
+Warning (10030): Net "instruction_mem.we_a" at cpu.sv(2) has no driver or initial value, using a default initial value '0' File: /acct/dm99/csce_611/lab4/lab_riuj/cpu.sv Line: 2
 Warning (12125): Using design file instr_decode.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: instr_decode File: /acct/dm99/csce_611/lab3/lab_riu/instr_decode.sv Line: 1
-Info (12128): Elaborating entity "instr_decode" for hierarchy "cpu:cpu|instr_decode:decoder" File: /acct/dm99/csce_611/lab3/lab_riu/cpu.sv Line: 59
+    Info (12023): Found entity 1: instr_decode File: /acct/dm99/csce_611/lab4/lab_riuj/instr_decode.sv Line: 1
+Info (12128): Elaborating entity "instr_decode" for hierarchy "cpu:cpu|instr_decode:decoder" File: /acct/dm99/csce_611/lab4/lab_riuj/cpu.sv Line: 71
 Warning (12125): Using design file control_unit.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: control_unit File: /acct/dm99/csce_611/lab3/lab_riu/control_unit.sv Line: 1
-Info (12128): Elaborating entity "control_unit" for hierarchy "cpu:cpu|control_unit:control_unit" File: /acct/dm99/csce_611/lab3/lab_riu/cpu.sv Line: 73
-Warning (10270): Verilog HDL Case Statement warning at control_unit.sv(49): incomplete case statement has no default case item File: /acct/dm99/csce_611/lab3/lab_riu/control_unit.sv Line: 49
-Warning (10270): Verilog HDL Case Statement warning at control_unit.sv(70): incomplete case statement has no default case item File: /acct/dm99/csce_611/lab3/lab_riu/control_unit.sv Line: 70
+    Info (12023): Found entity 1: control_unit File: /acct/dm99/csce_611/lab4/lab_riuj/control_unit.sv Line: 1
+Info (12128): Elaborating entity "control_unit" for hierarchy "cpu:cpu|control_unit:control_unit" File: /acct/dm99/csce_611/lab4/lab_riuj/cpu.sv Line: 91
+Warning (10270): Verilog HDL Case Statement warning at control_unit.sv(73): incomplete case statement has no default case item File: /acct/dm99/csce_611/lab4/lab_riuj/control_unit.sv Line: 73
+Warning (10270): Verilog HDL Case Statement warning at control_unit.sv(94): incomplete case statement has no default case item File: /acct/dm99/csce_611/lab4/lab_riuj/control_unit.sv Line: 94
 Warning (12125): Using design file regfile.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: regfile File: /acct/dm99/csce_611/lab3/lab_riu/regfile.sv Line: 3
-Info (12128): Elaborating entity "regfile" for hierarchy "cpu:cpu|regfile:regfile" File: /acct/dm99/csce_611/lab3/lab_riu/cpu.sv Line: 86
+    Info (12023): Found entity 1: regfile File: /acct/dm99/csce_611/lab4/lab_riuj/regfile.sv Line: 3
+Info (12128): Elaborating entity "regfile" for hierarchy "cpu:cpu|regfile:regfile" File: /acct/dm99/csce_611/lab4/lab_riuj/cpu.sv Line: 104
 Warning (12125): Using design file alu.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: alu File: /acct/dm99/csce_611/lab3/lab_riu/alu.sv Line: 7
-Info (12128): Elaborating entity "alu" for hierarchy "cpu:cpu|alu:alu" File: /acct/dm99/csce_611/lab3/lab_riu/cpu.sv Line: 95
-Warning (10036): Verilog HDL or VHDL warning at alu.sv(15): object "mullu" assigned a value but never read File: /acct/dm99/csce_611/lab3/lab_riu/alu.sv Line: 15
-Info (12128): Elaborating entity "hexdriver" for hierarchy "hexdriver:driver1" File: /acct/dm99/csce_611/lab3/lab_riu/top.sv Line: 63
+    Info (12023): Found entity 1: alu File: /acct/dm99/csce_611/lab4/lab_riuj/alu.sv Line: 7
+Info (12128): Elaborating entity "alu" for hierarchy "cpu:cpu|alu:alu" File: /acct/dm99/csce_611/lab4/lab_riuj/cpu.sv Line: 113
+Warning (10036): Verilog HDL or VHDL warning at alu.sv(15): object "mullu" assigned a value but never read File: /acct/dm99/csce_611/lab4/lab_riuj/alu.sv Line: 15
+Info (12128): Elaborating entity "hexdriver" for hierarchy "hexdriver:driver1" File: /acct/dm99/csce_611/lab4/lab_riuj/top.sv Line: 63
 Warning (276020): Inferred RAM node "cpu:cpu|regfile:regfile|mem_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
 Warning (276020): Inferred RAM node "cpu:cpu|regfile:regfile|mem_rtl_1" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/acct/dm99/csce_611/lab3/lab_riu/db/DE2_115.ram0_cpu_1987c.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/acct/dm99/csce_611/lab4/lab_riuj/db/DE2_115.ram0_cpu_1987c.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Info (19000): Inferred 2 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "cpu:cpu|regfile:regfile|mem_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
@@ -887,8 +898,8 @@ Info (19000): Inferred 2 megafunctions from design logic
         Info (286033): Parameter INDATA_ACLR_A set to NONE
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
 Info (278001): Inferred 2 megafunctions from design logic
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "cpu:cpu|alu:alu|Mult1" File: /acct/dm99/csce_611/lab3/lab_riu/alu.sv Line: 22
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "cpu:cpu|alu:alu|Mult0" File: /acct/dm99/csce_611/lab3/lab_riu/alu.sv Line: 21
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "cpu:cpu|alu:alu|Mult1" File: /acct/dm99/csce_611/lab4/lab_riuj/alu.sv Line: 22
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "cpu:cpu|alu:alu|Mult0" File: /acct/dm99/csce_611/lab4/lab_riuj/alu.sv Line: 21
 Info (12130): Elaborated megafunction instantiation "cpu:cpu|regfile:regfile|altsyncram:mem_rtl_0"
 Info (12133): Instantiated megafunction "cpu:cpu|regfile:regfile|altsyncram:mem_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -906,9 +917,9 @@ Info (12133): Instantiated megafunction "cpu:cpu|regfile:regfile|altsyncram:mem_
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_mcc1.tdf
-    Info (12023): Found entity 1: altsyncram_mcc1 File: /acct/dm99/csce_611/lab3/lab_riu/db/altsyncram_mcc1.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "cpu:cpu|alu:alu|lpm_mult:Mult1" File: /acct/dm99/csce_611/lab3/lab_riu/alu.sv Line: 22
-Info (12133): Instantiated megafunction "cpu:cpu|alu:alu|lpm_mult:Mult1" with the following parameter: File: /acct/dm99/csce_611/lab3/lab_riu/alu.sv Line: 22
+    Info (12023): Found entity 1: altsyncram_mcc1 File: /acct/dm99/csce_611/lab4/lab_riuj/db/altsyncram_mcc1.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "cpu:cpu|alu:alu|lpm_mult:Mult1" File: /acct/dm99/csce_611/lab4/lab_riuj/alu.sv Line: 22
+Info (12133): Instantiated megafunction "cpu:cpu|alu:alu|lpm_mult:Mult1" with the following parameter: File: /acct/dm99/csce_611/lab4/lab_riuj/alu.sv Line: 22
     Info (12134): Parameter "LPM_WIDTHA" = "32"
     Info (12134): Parameter "LPM_WIDTHB" = "32"
     Info (12134): Parameter "LPM_WIDTHP" = "64"
@@ -919,9 +930,9 @@ Info (12133): Instantiated megafunction "cpu:cpu|alu:alu|lpm_mult:Mult1" with th
     Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_46t.tdf
-    Info (12023): Found entity 1: mult_46t File: /acct/dm99/csce_611/lab3/lab_riu/db/mult_46t.tdf Line: 30
-Info (12130): Elaborated megafunction instantiation "cpu:cpu|alu:alu|lpm_mult:Mult0" File: /acct/dm99/csce_611/lab3/lab_riu/alu.sv Line: 21
-Info (12133): Instantiated megafunction "cpu:cpu|alu:alu|lpm_mult:Mult0" with the following parameter: File: /acct/dm99/csce_611/lab3/lab_riu/alu.sv Line: 21
+    Info (12023): Found entity 1: mult_46t File: /acct/dm99/csce_611/lab4/lab_riuj/db/mult_46t.tdf Line: 30
+Info (12130): Elaborated megafunction instantiation "cpu:cpu|alu:alu|lpm_mult:Mult0" File: /acct/dm99/csce_611/lab4/lab_riuj/alu.sv Line: 21
+Info (12133): Instantiated megafunction "cpu:cpu|alu:alu|lpm_mult:Mult0" with the following parameter: File: /acct/dm99/csce_611/lab4/lab_riuj/alu.sv Line: 21
     Info (12134): Parameter "LPM_WIDTHA" = "32"
     Info (12134): Parameter "LPM_WIDTHB" = "32"
     Info (12134): Parameter "LPM_WIDTHP" = "64"
@@ -932,30 +943,30 @@ Info (12133): Instantiated megafunction "cpu:cpu|alu:alu|lpm_mult:Mult0" with th
     Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_7dt.tdf
-    Info (12023): Found entity 1: mult_7dt File: /acct/dm99/csce_611/lab3/lab_riu/db/mult_7dt.tdf Line: 30
+    Info (12023): Found entity 1: mult_7dt File: /acct/dm99/csce_611/lab4/lab_riuj/db/mult_7dt.tdf Line: 30
 Info (13014): Ignored 456 buffer(s)
     Info (13019): Ignored 456 SOFT buffer(s)
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDG[8]" is stuck at GND File: /acct/dm99/csce_611/lab3/lab_riu/top.sv Line: 14
+    Warning (13410): Pin "LEDG[8]" is stuck at GND File: /acct/dm99/csce_611/lab4/lab_riuj/top.sv Line: 14
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 5 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK2_50" File: /acct/dm99/csce_611/lab3/lab_riu/top.sv Line: 10
-    Warning (15610): No output dependent on input pin "CLOCK3_50" File: /acct/dm99/csce_611/lab3/lab_riu/top.sv Line: 11
-    Warning (15610): No output dependent on input pin "KEY[1]" File: /acct/dm99/csce_611/lab3/lab_riu/top.sv Line: 18
-    Warning (15610): No output dependent on input pin "KEY[2]" File: /acct/dm99/csce_611/lab3/lab_riu/top.sv Line: 18
-    Warning (15610): No output dependent on input pin "KEY[3]" File: /acct/dm99/csce_611/lab3/lab_riu/top.sv Line: 18
-Info (21057): Implemented 1814 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "CLOCK2_50" File: /acct/dm99/csce_611/lab4/lab_riuj/top.sv Line: 10
+    Warning (15610): No output dependent on input pin "CLOCK3_50" File: /acct/dm99/csce_611/lab4/lab_riuj/top.sv Line: 11
+    Warning (15610): No output dependent on input pin "KEY[1]" File: /acct/dm99/csce_611/lab4/lab_riuj/top.sv Line: 18
+    Warning (15610): No output dependent on input pin "KEY[2]" File: /acct/dm99/csce_611/lab4/lab_riuj/top.sv Line: 18
+    Warning (15610): No output dependent on input pin "KEY[3]" File: /acct/dm99/csce_611/lab4/lab_riuj/top.sv Line: 18
+Info (21057): Implemented 1786 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 25 input pins
     Info (21059): Implemented 83 output pins
-    Info (21061): Implemented 1626 logic cells
+    Info (21061): Implemented 1598 logic cells
     Info (21064): Implemented 64 RAM segments
     Info (21062): Implemented 16 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 26 warnings
-    Info: Peak virtual memory: 1037 megabytes
-    Info: Processing ended: Wed Oct 21 16:01:29 2026
-    Info: Elapsed time: 00:00:13
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 28 warnings
+    Info: Peak virtual memory: 1036 megabytes
+    Info: Processing ended: Wed Oct 28 16:41:18 2026
+    Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:20
 
 
