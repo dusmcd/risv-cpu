@@ -142,29 +142,47 @@ module control_unit(
           3'b000: begin
             // beq instruction
             aluop = 4'b0100; // alu op is sub
-            if (R_EX == 32'b0) pcsrc_EX = 2'd2;
+            if (R_EX == 32'b0) begin
+              pcsrc_EX = 2'd2;
+              stall_FETCH = 1'b1;
+            end
           end
           3'b101: begin
             // bge instruction
             aluop = 4'b1100; // alu op is slt
-            if (R_EX == 32'b0) pcsrc_EX = 2'd2;
+            if (R_EX == 32'b0) begin
+              pcsrc_EX = 2'd2;
+              stall_FETCH = 1'b1;
+            end
           end
           3'b111: begin
             // bgeu instruction
             aluop = 4'b1101; // alu op is sltu
-            if (R_EX == 32'b0) pcsrc_EX = 2'd2;
+            if (R_EX == 32'b0) begin
+              pcsrc_EX = 2'd2;
+              stall_FETCH = 1'b1;
+            end
           end
           3'b100: begin
             // blt instruction
             aluop = 4'b1100; // alu op is slt
-            if (R_EX == 32'b1) pcsrc_EX = 2'd2;
+            if (R_EX == 32'b1) begin
+              pcsrc_EX = 2'd2;
+              stall_FETCH = 1'b1;
+            end
           end
           3'b110: begin
             // bltu instruction
             aluop = 4'b1101; // alu op is sltu
-            if (R_EX == 32'b1) pcsrc_EX = 2'd2;
+            if (R_EX == 32'b1) begin
+              pcsrc_EX = 2'd2;
+              stall_FETCH = 1'b1;
+            end
           end
-          default: pcsrc_EX = 2'b0;
+          default: begin 
+            pcsrc_EX = 2'b0;
+            stall_FETCH = 1'b0;
+          end
         endcase
       end
 

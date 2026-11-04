@@ -66,7 +66,7 @@ module simtop;
     $readmemh("testbench.txt", dut.cpu.instruction_mem);
   end
 
-  int NUM_CLOCKS = 10;
+  int NUM_CLOCKS = 40;
   initial begin
     wait(KEY[0] == 1'b1);
     repeat(NUM_CLOCKS) @(negedge clk);
