@@ -32,6 +32,7 @@ module cpu(input logic clk, input logic rst, input logic[17:0] io_in, output log
   logic [31:0] alu_srcdata_EX;
   logic [31:0] jal_addr_EX;
   logic [31:0] branch_addr_EX;
+  logic [31:0] jalr_addr_EX;
   logic [1:0] pcsrc_EX;
   logic stall_FETCH;
   logic stall_EX;
@@ -50,6 +51,7 @@ module cpu(input logic clk, input logic rst, input logic[17:0] io_in, output log
         2'd0: PC_FETCH <= PC_FETCH + 12'b1;
         2'd1: PC_FETCH <= jal_addr_EX;
         2'd2: PC_FETCH <= branch_addr_EX;
+        2'd3: PC_FETCH <= jalr_addr_EX;
       endcase
 
       PC_EX <= PC_FETCH;
@@ -82,6 +84,7 @@ module cpu(input logic clk, input logic rst, input logic[17:0] io_in, output log
     .csr(csr),
     .PC_EX(PC_EX),
     .R_EX(alu_output_EX),
+    .rs1_data(rs1_data),
     .alusrc(alusrc_EX),
     .stall_EX(stall_EX),
     .regwrite(regwrite_EX),
@@ -91,7 +94,8 @@ module cpu(input logic clk, input logic rst, input logic[17:0] io_in, output log
     .stall_FETCH(stall_FETCH),
     .pcsrc_EX(pcsrc_EX),
     .jal_addr_EX(jal_addr_EX),
-    .branch_addr_EX(branch_addr_EX)
+    .branch_addr_EX(branch_addr_EX),
+    .jalr_addr_EX(jalr_addr_EX)
   );
 
 

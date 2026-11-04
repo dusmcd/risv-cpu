@@ -7,6 +7,7 @@ module control_unit(
   input logic [31:0] instruction_EX,
   input logic stall_EX,
   input logic [31:0] R_EX,
+  input logic [31:0] rs1_data,
   output logic alusrc,
   output logic regwrite,
   output logic[1:0] regsel,
@@ -15,11 +16,13 @@ module control_unit(
   output logic stall_FETCH,
   output logic [31:0] jal_addr_EX,
   output logic [31:0] branch_addr_EX,
+  output logic [31:0] jalr_addr_EX,
   output logic [1:0] pcsrc_EX
   );
 
   logic [20:0] jal_offset_EX;
   logic [12:0] branch_offset_EX;
+  logic [11:0] jalr_offset_EX;
   always_comb begin
     // default values
     alusrc = 1'b0;
@@ -33,6 +36,8 @@ module control_unit(
     jal_offset_EX = 21'b0;
     branch_addr_EX = 32'b0;
     branch_offset_EX = 12'b0;
+    jalr_offset_EX = 12'b0;
+    jalr_addr_EX = 32'b0;
 
     if (stall_EX) begin
       // this will be a no op
@@ -69,7 +74,7 @@ module control_unit(
       end
 
       else if (opcode == 7'b0010011) begin
-        // this is an I-type
+        // this is an I-type integer
         regwrite = 1'b1;
         gpio_we = 1'b0;
         regsel = 2'b10;
@@ -87,6 +92,18 @@ module control_unit(
           end
         endcase
 
+      end
+      else if (opcode == 7'b1100111) begin
+        // this is an I-type control flow (i.e., jalr for this CPU)
+        regwrite = 1'b1;
+        stall_FETCH = 1'b1;
+        gpio_we = 1'b0;
+        aluop = 4'bXXXX;
+        pcsrc_EX = 2'd3;
+        regsel = 2'd3;
+        regwrite = 1'b1;
+        jalr_offset_EX = instruction_EX[31:20];
+        jalr_addr_EX = rs1_data[11:0] + {{2{jalr_offset_EX[11]}},jalr_offset_EX[11:2]};
       end
 
       else if (opcode == 7'b1110011) begin
