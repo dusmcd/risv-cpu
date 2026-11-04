@@ -6,6 +6,7 @@ module control_unit(
   input logic [11:0] PC_EX,
   input logic [31:0] instruction_EX,
   input logic stall_EX,
+  input logic [31:0] R_EX,
   output logic alusrc,
   output logic regwrite,
   output logic[1:0] regsel,
@@ -13,10 +14,12 @@ module control_unit(
   output logic gpio_we,
   output logic stall_FETCH,
   output logic [31:0] jal_addr_EX,
+  output logic [31:0] branch_addr_EX,
   output logic [1:0] pcsrc_EX
   );
 
   logic [20:0] jal_offset_EX;
+  logic [12:0] branch_offset_EX;
   always_comb begin
     // default values
     alusrc = 1'b0;
@@ -28,6 +31,8 @@ module control_unit(
     pcsrc_EX = 2'b0;
     jal_addr_EX = 32'b0;
     jal_offset_EX = 21'b0;
+    branch_addr_EX = 32'b0;
+    branch_offset_EX = 12'b0;
 
     if (stall_EX) begin
       // this will be a no op
@@ -123,6 +128,44 @@ module control_unit(
         jal_offset_EX = {instruction_EX[31],instruction_EX[19:12],instruction_EX[20],instruction_EX[30:21],1'b0};
         jal_addr_EX = PC_EX + jal_offset_EX[13:2];
         pcsrc_EX = 2'b01;
+      end
+
+      else if (opcode == 7'b1100011) begin
+        // this is the B-type (branch instructions)
+        regwrite = 1'b0;
+        gpio_we = 1'b0;
+        alusrc = 1'b0;
+        regsel = 2'bXX;
+        branch_offset_EX = {instruction_EX[31], instruction_EX[7], instruction_EX[30:25], instruction_EX[11:8], 1'b0};
+        branch_addr_EX = PC_EX + {branch_offset_EX[12],branch_offset_EX[12:2]};
+        case(funct3)
+          3'b000: begin
+            // beq instruction
+            aluop = 4'b0100; // alu op is sub
+            if (R_EX == 32'b0) pcsrc_EX = 2'd2;
+          end
+          3'b101: begin
+            // bge instruction
+            aluop = 4'b1100; // alu op is slt
+            if (R_EX == 32'b0) pcsrc_EX = 2'd2;
+          end
+          3'b111: begin
+            // bgeu instruction
+            aluop = 4'b1101; // alu op is sltu
+            if (R_EX == 32'b0) pcsrc_EX = 2'd2;
+          end
+          3'b100: begin
+            // blt instruction
+            aluop = 4'b1100; // alu op is slt
+            if (R_EX == 32'b1) pcsrc_EX = 2'd2;
+          end
+          3'b110: begin
+            // bltu instruction
+            aluop = 4'b1101; // alu op is sltu
+            if (R_EX == 32'b1) pcsrc_EX = 2'd2;
+          end
+          default: pcsrc_EX = 2'b0;
+        endcase
       end
 
       else begin
