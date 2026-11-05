@@ -7,7 +7,7 @@ module simtop;
 	logic [17:0] SW;
   instr_t instr;
 
-	top dut
+	top #(.instruction_file("tb_instructions.txt")) dut
 	(
 		//////////// CLOCK //////////
 		.CLOCK_50(clk),
@@ -69,39 +69,31 @@ module simtop;
     }
   endgroup
 
-  CPUInstruction cpu_instr;
   CPUReferenceModel ref_model;
-  instr_t current_instr;
   logic [31:0] expected;
   logic [31:0] instruction_WB;
   logic [31:0] instruction_EX;
+  logic [31:0] writedata_WB;
   bit valid_WB;
-  logic stall_EX;
   bit rst; // active low reset
-  int num_instructions;
-
-
   cg cg_inst;
 
   // pulse reset
-  initial begin
-    rst = 1'b0;
+  initial begin : reset
+    KEY = 4'b1110;
     #10;
-    rst = 1'b1;
-  end
+    KEY = 4'b1111;
+  end : reset
+
+  assign rst = KEY[0];
   initial begin : tester
-    instr = NOOP;
-    num_instructions = 10;
     ref_model = new();
-    cpu_instr = new();
     cg_inst = new();
-    cpu_instr.create_instr_file(num_instructions);
-    #1;
     // call $readmemh 
 
     // wait for reset
     wait(rst == 1'b1);
-    repeat(num_instructions) @(negedge clk);
+    repeat(300) @(negedge clk);
     $display("Coverage = %0.2f %%", cg_inst.get_inst_coverage());
     $finish;
   end : tester
@@ -111,26 +103,22 @@ module simtop;
     if (~rst)
       valid_WB <= 1'b0;
     else begin
-      valid_WB <= ~stall_EX;
+      valid_WB <= 1'b1;
       instruction_WB <= instruction_EX;
     end
   end
 
-  /*
-    TODO:
-     (1) assign instruction_EX to corresponding DUT signal
-     (2) assign stall_EX to corresponding DUT signal
-     (3) rst will be replaced with KEY signal
-     (4) pulse reset
-  */
+  assign instruction_EX = dut.cpu.instruction_EX;
+  assign writedata_WB = dut.cpu.writedata_WB;
   
-  /*
   always @(posedge clk) begin : scoreboard
     if (valid_WB && !$isunknown(instruction_WB)) begin
       // check reference model against DUT 
-      ref_model.decode_and_execute(instruction_WB, current_instr, expected);
+      ref_model.decode_and_execute(instruction_WB, instr, expected);
+      if (writedata_WB != expected) begin
+        $error("destination register incorrect. expected=%h got=%h for instruction=%h", expected, writedata_WB, instruction_WB);
+      end
     end
   end : scoreboard
-  */
 
 endmodule

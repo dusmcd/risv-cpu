@@ -21,9 +21,7 @@ class CPUInstruction;
         $fatal("Randomization failed");
 
       instruction = encode_instr(); 
-
       $fdisplay(file, "%h", instruction);
-      end
       
     end
     $fclose(file);
