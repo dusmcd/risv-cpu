@@ -1,6 +1,6 @@
 # vsim -pedanticerrors -hazards -c -sva -immedassert work.simtop -do "/dev/stdin" 
-# Start time: 14:27:17 on Oct 16,2026
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Start time: 16:02:47 on Oct 21,2026
+# ** Note: (vsim-3812) Design is being optimized...
 # //  Questa Sim-64
 # //  Version 2020.1 linux_x86_64 Jan 28 2020
 # //
@@ -977,5 +977,5 @@
 # x         31: xxxxxxxx
 # ** Note: $finish    : simtop.sv(74)
 #    Time: 281 ns  Iteration: 0  Instance: /simtop
-# End time: 14:27:18 on Oct 16,2026, Elapsed time: 0:00:01
+# End time: 16:02:47 on Oct 21,2026, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0

@@ -1,7 +1,7 @@
 m255
 K4
 z2
-!s11f MIXED_VERSIONS
+!s11f vlog 2020.1 2020.01, Jan 28 2020
 13
 !s112 1.1
 !i10d 8192
@@ -10,238 +10,227 @@ z2
 cModel Technology
 Z0 d/acct/dm99/csce_611/lab3/lab_riu
 T_opt
-!s110 1792175238
-VYYGO5NWm1zzjd_RYT95hR0
-Z1 04 6 4 work simtop fast 0
-=1-000ae431a4f1-6ad26c86-b9a0-362095
-Z2 o-quiet -auto_acc_if_foreign -work work
-Z3 tCvgOpt 0
-n@_opt
-Z4 OL;O;2020.1;71
-T_opt1
-!s110 1792007094
-V]f_HQc]R2f7XQPK_jeO`H2
-Z5 04 3 4 work top fast 0
-=1-000ae431a4f1-6acfdbb5-e5319-1f40f1
-o-quiet -auto_acc_if_foreign -work work +acc
-R3
-n@_opt1
-R4
-R0
-T_opt2
-!s110 1792008458
-V?:j_^<lC<eblmU:aS?3Ob0
+!s110 1792612101
+VY:Tgo@Nm^MA`ZJLOMiNSi1
 04 3 4 work alu fast 0
 04 12 4 work control_unit fast 0
 04 3 4 work cpu fast 0
 04 9 4 work hexdriver fast 0
 04 12 4 work instr_decode fast 0
 04 7 4 work regfile fast 0
-R1
-R5
-=1-000ae431a4f1-6acfe10a-7cbd8-1f8966
-R2
-R3
-n@_opt2
-R4
+Z1 04 6 4 work simtop fast 0
+=1-000ae431a4f1-6ad91705-4dcaf-1dd723
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+Z3 OL;O;2020.1;71
 R0
+T_opt1
+!s110 1792612967
+V`EO=TK_NeNNozNMj3S=ZN1
+R1
+=1-000ae431a4f1-6ad91a67-1e2c3-1e08c2
+o-quiet -auto_acc_if_foreign -work work
+R2
+n@_opt1
+R3
 valu
-Z6 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z7 !s110 1792175237
+Z4 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z5 !s110 1792612966
 !i10b 1
 !s100 Fz;21dl2PMZ6MFeGeLCUd1
-Z8 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Z6 !s11b Dg1SIo80bB@j0V0VzS_@n1
 Idkda=b6UUa[8UodDQhYLI2
-Z9 VDg1SIo80bB@j0V0VzS_@n1
+Z7 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
 w1695668374
 8alu.sv
 Falu.sv
-!i122 50
+!i122 2
 L0 7 48
-Z10 OL;L;2020.1;71
+Z8 OL;L;2020.1;71
 r1
 !s85 0
 31
-Z11 !s108 1792175237.000000
-Z12 !s107 top.sv|simtop.sv|regfile.sv|instr_decode.sv|hexdriver.sv|cpu.sv|control_unit.sv|alu.sv|
-Z13 !s90 -pedanticerrors|-lint|-hazards|-source|-stats=all|alu.sv|control_unit.sv|cpu.sv|hexdriver.sv|instr_decode.sv|regfile.sv|simtop.sv|top.sv|
+Z9 !s108 1792612966.000000
+Z10 !s107 top.sv|simtop.sv|regfile.sv|instr_decode.sv|hexdriver.sv|cpu.sv|control_unit.sv|alu.sv|
+Z11 !s90 -pedanticerrors|-lint|-hazards|-source|-stats=all|alu.sv|control_unit.sv|cpu.sv|hexdriver.sv|instr_decode.sv|regfile.sv|simtop.sv|top.sv|
 !i113 0
-Z14 o-pedanticerrors -lint -hazards -source -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R3
+Z12 o-pedanticerrors -lint -hazards -source -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
 vcontrol_unit
-R6
-R7
+R4
+R5
 !i10b 1
 !s100 QdKE9=dHiD_l4zjLB:fiM1
-R8
+R6
 I64`5?cl<@GKgCFo=49?@30
-R9
+R7
 S1
 R0
 w1791647348
 8control_unit.sv
 Fcontrol_unit.sv
-!i122 50
+!i122 2
 L0 1 97
-R10
+R8
 r1
 !s85 0
 31
+R9
+R10
 R11
-R12
-R13
 !i113 0
-R14
-R3
+R12
+R2
 vcpu
-R6
-R7
+R4
+R5
 !i10b 1
 !s100 `3cScmK_EhEA6_SCBT4TB3
-R8
+R6
 I`?]bFn_X`oI8BGfORG>R>0
-R9
+R7
 S1
 R0
 w1791647021
 8cpu.sv
 Fcpu.sv
-!i122 50
+!i122 2
 L0 1 125
-R10
+R8
 r1
 !s85 0
 31
+R9
+R10
 R11
-R12
-R13
 !i113 0
-R14
-R3
+R12
+R2
 vhexdriver
-R6
-R7
+R4
+R5
 !i10b 1
 !s100 D2c2kcVgaE;`nin0>[l^f2
-R8
+R6
 I6;Oke1=L21>8Hl1?jdV3@3
-R9
+R7
 S1
 R0
 w1791823549
 8hexdriver.sv
 Fhexdriver.sv
-!i122 50
+!i122 2
 L0 1 23
-R10
+R8
 r1
 !s85 0
 31
+R9
+R10
 R11
-R12
-R13
 !i113 0
-R14
-R3
+R12
+R2
 vinstr_decode
-R6
-R7
+R4
+R5
 !i10b 1
 !s100 ALi0DKQlm1PMizgfOUC7P1
-R8
+R6
 IR28W5Qb?:ZHe2U0j0Qel^0
-R9
+R7
 S1
 R0
 w1792017074
 8instr_decode.sv
 Finstr_decode.sv
-!i122 50
+!i122 2
 L0 1 22
-R10
+R8
 r1
 !s85 0
 31
+R9
+R10
 R11
-R12
-R13
 !i113 0
-R14
-R3
+R12
+R2
 vregfile
-R6
-R7
+R4
+R5
 !i10b 1
 !s100 ?^aWIU5R`P?QnPdE@RGJe0
-R8
+R6
 IRDSL9iG2]ma^CoM2hhRo:0
-R9
+R7
 S1
 R0
 w1791403888
 8regfile.sv
 Fregfile.sv
-!i122 50
+!i122 2
 L0 3 38
-R10
+R8
 r1
 !s85 0
 31
+R9
+R10
 R11
-R12
-R13
 !i113 0
-R14
-R3
+R12
+R2
 vsimtop
-R6
-R7
+R4
+R5
 !i10b 1
 !s100 Ne2TX=lmHj42_G3KG1Q4R2
-R8
+R6
 I^LzbMYWX]nUXLCfHHoP;O2
-R9
+R7
 S1
 R0
-w1792175233
+w1792612211
 8simtop.sv
 Fsimtop.sv
-!i122 50
+!i122 2
 L0 6 90
-R10
+R8
 r1
 !s85 0
 31
+R9
+R10
 R11
-R12
-R13
 !i113 0
-R14
-R3
+R12
+R2
 vtop
-R6
-R7
+R4
+R5
 !i10b 1
 !s100 HH12>h9Yg>NkeD7eNCnJ30
-R8
+R6
 IS=2X3:Fj`lgOGgDD^mHPd2
-R9
+R7
 S1
 R0
 w1791823603
 8top.sv
 Ftop.sv
-!i122 50
+!i122 2
 L0 6 104
-R10
+R8
 r1
 !s85 0
 31
+R9
+R10
 R11
-R12
-R13
 !i113 0
-R14
-R3
+R12
+R2
