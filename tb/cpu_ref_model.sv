@@ -1,3 +1,5 @@
+typedef enum int {RTYPE, ITYPE, UTYPE, NA} instr_types;
+
 class CPUReferenceModel;
   logic [31:0] registers[32];
   logic [12:0] pc;
@@ -7,6 +9,27 @@ class CPUReferenceModel;
       registers[i] = 32'b0;
 
     pc = 12'b0;
+  endfunction
+
+  function automatic void print_instr(
+    input instr_t instr,
+    input instr_types instr_type,
+    input logic [4:0] rs1,
+    input logic [4:0] rs2,
+    input logic [4:0] rd,
+    input logic [11:0] imm,
+    input logic [19:0] imm_u
+  );
+    case (instr_type)
+      RTYPE: begin
+        $display("%s x%d, x%d, x%d", instr.name(), rd, rs1, rs2);
+      end
+      ITYPE: begin
+        $display("%s x%d, x%d, %d", instr.name(), rd, rs1, imm);
+      end
+      default: $display("instruction not supported for display right now");
+    endcase
+
   endfunction
 
   function automatic void execute_instruction(
@@ -20,28 +43,90 @@ class CPUReferenceModel;
     output logic [31:0] write_data
     );
 
+    instr_types instr_type;
+    instr_type = NA;
     case (instr)
-      ADD: add(rs1, rs2, rd);
-      SUB: sub(rs1, rs2, rd);
-      AND: and_op(rs1, rs2, rd);
-      OR: or_op(rs1, rs2, rd);
-      XOR: xor_op(rs1, rs2, rd);
-      SLL: sll(rs1, rs2, rd);
-      SRA: sra(rs1, rs2, rd);
-      SRL: srl(rs1, rs2, rd);
-      SLT: slt(rs1, rs2, rd);
-      SLTU: sltu(rs1, rs2, rd);
-      MUL: mul(rs1, rs2, rd);
-      MULH: mulh(rs1, rs2, rd);
-      MULHU: mulhu(rs1, rs2, rd);
+      ADD: begin
+        add(rs1, rs2, rd);
+        instr_type = RTYPE;
+      end
+      SUB: begin
+        sub(rs1, rs2, rd);
+        instr_type = RTYPE;
+      end
+      AND: begin
+        and_op(rs1, rs2, rd);
+        instr_type = RTYPE;
+      end
+      OR: begin
+        or_op(rs1, rs2, rd);
+        instr_type = RTYPE;
+      end
+      XOR: begin
+        xor_op(rs1, rs2, rd);
+        instr_type = RTYPE;
+      end
+      SLL: begin
+        sll(rs1, rs2, rd);
+        instr_type = RTYPE;
+      end
+      SRA: begin
+        sra(rs1, rs2, rd);
+        instr_type = RTYPE;
+      end
+      SRL: begin
+        srl(rs1, rs2, rd);
+        instr_type = RTYPE;
+      end
+      SLT: begin
+        slt(rs1, rs2, rd);
+        instr_type = RTYPE;
+      end
+      SLTU: begin
+        sltu(rs1, rs2, rd);
+        instr_type = RTYPE;
+      end
+      MUL: begin
+        mul(rs1, rs2, rd);
+        instr_type = RTYPE;
+      end
+      MULH: begin
+        mulh(rs1, rs2, rd);
+        instr_type = RTYPE;
+      end
+      MULHU: begin
+        mulhu(rs1, rs2, rd);
+        instr_type = RTYPE;
+      end
       CSRRW: csrrw(rs1, rd, imm);
-      ADDI: addi(rs1, imm, rd);
-      ANDI: andi(rs1, imm, rd);
-      ORI: ori(rs1, imm, rd);
-      XORI: xori(rs1, imm, rd);
-      SLLI: slli(rs1, imm, rd);
-      SRAI: srai(rs1, imm, rd);
-      SRLI: srli(rs1, imm, rd);
+      ADDI: begin
+        addi(rs1, imm, rd);
+        instr_type = ITYPE;
+      end
+      ANDI: begin
+        andi(rs1, imm, rd);
+        instr_type = ITYPE;
+      end
+      ORI: begin
+        ori(rs1, imm, rd);
+        instr_type = ITYPE;
+      end
+      XORI: begin
+        xori(rs1, imm, rd);
+        instr_type = ITYPE;
+      end
+      SLLI: begin
+        slli(rs1, imm, rd);
+        instr_type = ITYPE;
+      end
+      SRAI: begin
+        srai(rs1, imm, rd);
+        instr_type = ITYPE;
+      end
+      SRLI: begin
+        srli(rs1, imm, rd);
+        instr_type = ITYPE;
+      end
       LUI: lui(imm_u, rd);
       NOOP: ;
     endcase
@@ -49,6 +134,7 @@ class CPUReferenceModel;
     registers[0] = 32'b0;
     instr_out = instr;
     write_data = registers[rd];
+    print_instr(instr, instr_type, rs1, rs2, rd, imm, imm_u);
   endfunction
 
   function automatic void decode_and_execute(

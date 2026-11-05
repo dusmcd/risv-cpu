@@ -10,19 +10,19 @@ z2
 cModel Technology
 Z0 d/acct/dm99/csce_611/lab3/lab_riu/tb
 T_opt
-!s110 1793900229
-Vm7zNzO@z4l9[l1M[N=J9e3
+!s110 1793901746
+VCRVM9ISjiLE8o=GP1[W[a3
 04 6 4 work simtop fast 0
-=1-000ae431a4f1-6aecbec5-39d58-a4da7
+=1-000ae431a4f1-6aecc4b2-4e6f-a8fe0
 Z1 o-quiet -auto_acc_if_foreign -work work
 Z2 tCvgOpt 0
 n@_opt
 Z3 OL;O;2020.1;71
 T_opt1
-!s110 1793900076
-VOh=e1QBKmn;3F`GDB=F]?1
+!s110 1793901745
+VV[T1Y5d42RgA9NDRXN1^V2
 04 21 4 work generate_instructions fast 0
-=1-000ae431a4f1-6aecbe2c-d9e39-a466b
+=1-000ae431a4f1-6aecc4b0-df01d-a8fbc
 R1
 R2
 n@_opt1
@@ -30,7 +30,7 @@ R3
 R0
 valu
 Z4 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z5 !s110 1793900227
+Z5 !s110 1793901744
 !i10b 1
 !s100 Fz;21dl2PMZ6MFeGeLCUd1
 Z6 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -41,13 +41,13 @@ R0
 w1695668374
 8../alu.sv
 F../alu.sv
-!i122 14
+!i122 18
 L0 7 48
 Z8 OL;L;2020.1;71
 r1
 !s85 0
 31
-Z9 !s108 1793900227.000000
+Z9 !s108 1793901744.000000
 Z10 !s107 cpu_instruction.sv|cpu_ref_model.sv|simtop.sv|generate_instructions.sv|cpu_tb_pkg.sv|../top.sv|../regfile.sv|../instr_decode.sv|../hexdriver.sv|../cpu.sv|../control_unit.sv|../alu.sv|
 Z11 !s90 -sv|../alu.sv|../control_unit.sv|../cpu.sv|../hexdriver.sv|../instr_decode.sv|../regfile.sv|../top.sv|cpu_tb_pkg.sv|generate_instructions.sv|simtop.sv|
 !i113 0
@@ -66,7 +66,7 @@ R0
 w1793892958
 8../control_unit.sv
 F../control_unit.sv
-!i122 14
+!i122 18
 L0 1 97
 R8
 r1
@@ -91,7 +91,7 @@ R0
 w1793898021
 8../cpu.sv
 F../cpu.sv
-!i122 14
+!i122 18
 L0 1 125
 R8
 r1
@@ -107,18 +107,18 @@ Xcpu_tb_pkg
 R4
 R5
 !i10b 1
-!s100 cz>Jz9=RlT8gm6;6V?C`m3
+!s100 FZ<jKOP1cC^5Ui]9dilRI2
 R6
-IhSAkdcoP`jPPU0;L1GYB;0
-VhSAkdcoP`jPPU0;L1GYB;0
+IEocY;SbI69YUUY^He>f`50
+VEocY;SbI69YUUY^He>f`50
 S1
 R0
-w1793898200
+w1793901738
 8cpu_tb_pkg.sv
 Fcpu_tb_pkg.sv
 Fcpu_ref_model.sv
 Fcpu_instruction.sv
-!i122 14
+!i122 18
 Z13 L0 1 0
 R8
 r1
@@ -132,7 +132,7 @@ R12
 R2
 vgenerate_instructions
 R4
-Z14 DXx4 work 10 cpu_tb_pkg 0 22 hSAkdcoP`jPPU0;L1GYB;0
+Z14 DXx4 work 10 cpu_tb_pkg 0 22 EocY;SbI69YUUY^He>f`50
 DXx4 work 29 generate_instructions_sv_unit 0 22 DQYM]`eMiaSR96VdD@J3L2
 R5
 R7
@@ -147,7 +147,7 @@ R0
 Z15 w1793900052
 Z16 8generate_instructions.sv
 Z17 Fgenerate_instructions.sv
-!i122 14
+!i122 18
 L0 3 13
 R8
 31
@@ -173,7 +173,7 @@ R0
 R15
 R16
 R17
-!i122 14
+!i122 18
 R13
 R8
 31
@@ -196,7 +196,7 @@ R0
 w1791823549
 8../hexdriver.sv
 F../hexdriver.sv
-!i122 14
+!i122 18
 L0 1 23
 R8
 r1
@@ -221,7 +221,7 @@ R0
 w1792017074
 8../instr_decode.sv
 F../instr_decode.sv
-!i122 14
+!i122 18
 L0 1 22
 R8
 r1
@@ -246,7 +246,7 @@ R0
 w1791403888
 8../regfile.sv
 F../regfile.sv
-!i122 14
+!i122 18
 L0 3 38
 R8
 r1
@@ -275,7 +275,7 @@ R0
 Z18 w1793900221
 Z19 8simtop.sv
 Z20 Fsimtop.sv
-!i122 14
+!i122 18
 L0 3 122
 R8
 31
@@ -301,7 +301,7 @@ R0
 R18
 R19
 R20
-!i122 14
+!i122 18
 R13
 R8
 31
@@ -324,7 +324,7 @@ R0
 w1793897938
 8../top.sv
 F../top.sv
-!i122 14
+!i122 18
 L0 6 108
 R8
 r1
