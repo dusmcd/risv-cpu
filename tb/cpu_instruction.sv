@@ -15,6 +15,19 @@ class CPUInstruction;
     if (file == 0)
       $fatal("Could not create file");
 
+    // generate instructions to fill out regfile with random values
+    for (int i = 1; i < 32; i++) begin
+      bit [31:0] instruction;
+      if (!randomize())
+        $fatal("Randomization failed");
+
+      rd = i;
+      instr = ADDI;
+      rs1 = 5'b0;
+      instruction = encode_instr();
+      $fdisplay(file, "%h", instruction);
+    end
+
     for (int i = 0; i < num; i++) begin
       bit [31:0] instruction;
       if (!randomize())
@@ -27,7 +40,8 @@ class CPUInstruction;
     $fclose(file);
   endfunction
 
-  function automatic bit [31:0] encode_instr();
+
+  local function automatic bit [31:0] encode_instr();
     bit [31:0] instruction;
     typedef enum bit [1:0] {RTYPE, ITYPE, UTYPE, NO_OPERANDS} instr_type;
     instr_type instr_type_inst;

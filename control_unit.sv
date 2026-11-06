@@ -24,7 +24,7 @@ module control_unit(
       regsel = 2'b10;
       alusrc = 1'b0;
       // check funct3 and funct7 for aluop
-      if (funct3 == 3'b000 && funct7 == 7'b0) aluop = 4'b0100; // add
+      if (funct3 == 3'b000 && funct7 == 7'b0) aluop = 4'b0011; // add
       else if (funct3 == 3'b000 && funct7 == 7'b0100000) aluop = 4'b0100; // sub
       else if (funct3 == 3'b111 && funct7 == 7'b0) aluop = 4'b0000; // and
       else if (funct3 == 3'b110 && funct7 == 7'b0) aluop = 4'b0001; // or
@@ -34,7 +34,7 @@ module control_unit(
       else if (funct3 == 3'b101 && funct7 == 7'b0) aluop = 4'b1001; // srl
       else if (funct3 == 3'b010 && funct7 == 7'b0) aluop = 4'b1100; // slt
       else if (funct3 == 3'b011 && funct7 == 7'b0) aluop = 4'b1101; // sltu
-      else if (funct3 == 3'b000 && funct7 == 7'b0000001) aluop = 4'b0101; // mul
+      else if (funct3 == 3'b000 && funct7 == 7'b0000001) aluop = 4'b0101; // mul TODO: change this back after testing
       else if (funct3 == 3'b001 && funct7 == 7'b0000001) aluop = 4'b0110; // mulh
       else if (funct3 == 3'b011 && funct7 == 7'b0000001) aluop = 4'b0111; // mulhu
     end
