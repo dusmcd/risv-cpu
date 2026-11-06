@@ -11,7 +11,7 @@ class CPUReferenceModel;
     pc = 12'b0;
   endfunction
 
-  function automatic void print_instr(
+  local function automatic void print_instr(
     input instr_t instr,
     input instr_types instr_type,
     input logic [4:0] rs1,
@@ -32,7 +32,7 @@ class CPUReferenceModel;
 
   endfunction
 
-  function automatic void execute_instruction(
+  local function automatic void execute_instruction(
     input instr_t instr,
     input logic [4:0] rs1,
     input logic [4:0] rs2,
