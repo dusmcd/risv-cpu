@@ -1,18 +1,23 @@
-import cpu_tb_pkg::*;
-
-module scoreboard(cpu_bfm bfm);
+class scoreboard;
   CPUReferenceModel ref_model;
+  virtual cpu_bfm bfm;
 
-  initial ref_model = new();
+  function new(virtual cpu_bfm bfm);
+    this.bfm = bfm;
+    this.ref_model = new();
+  endfunction
 
-  always @(posedge bfm.clk) begin : scoreboard
-    if (bfm.valid_WB && !$isunknown(bfm.instruction_WB)) begin
-      // check reference model against DUT 
-      ref_model.decode_and_execute(bfm.instruction_WB, bfm.instr, bfm.expected);
-      if (bfm.writedata_WB != bfm.expected) begin
-        $error("destination register incorrect. expected=%h got=%h for instruction=%h", bfm.expected, bfm.writedata_WB, bfm.instruction_WB);
+  task execute();
+    forever begin 
+      @(posedge bfm.clk)
+      if (bfm.valid_WB && !$isunknown(bfm.instruction_WB)) begin
+        // check reference model against DUT 
+        ref_model.decode_and_execute(bfm.instruction_WB, bfm.instr, bfm.expected);
+        if (bfm.writedata_WB != bfm.expected) begin
+          $error("destination register incorrect. expected=%h got=%h for instruction=%h", bfm.expected, bfm.writedata_WB, bfm.instruction_WB);
+        end
       end
-    end
-  end : scoreboard
+    end 
+  endtask
 
-endmodule
+endclass

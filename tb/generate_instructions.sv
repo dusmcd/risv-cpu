@@ -1,4 +1,4 @@
-import cpu_tb_pkg::*;
+import cpu_tb_pkg::CPUInstruction;
 
 module generate_instructions;
 

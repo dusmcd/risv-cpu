@@ -1,6 +1,4 @@
-import cpu_tb_pkg::*;
-
-module coverage(cpu_bfm bfm);
+class coverage;
   // ensure that all instructions have been executed
   covergroup cg @(posedge bfm.clk);
     coverpoint bfm.instr {
@@ -29,14 +27,19 @@ module coverage(cpu_bfm bfm);
     }
   endgroup
 
-  cg cg_inst;
-  initial begin
-    cg_inst = new();
+  virtual cpu_bfm bfm;
+
+  function new(virtual cpu_bfm bfm);
+    this.bfm = bfm;
+    cg = new();
+  endfunction
+
+  task execute();
     wait(bfm.done);
-    $display("Coverage = %.2f %%", cg_inst.get_inst_coverage());
+    $display("Coverage = %.2f %%", cg.get_inst_coverage());
     $finish;
-  end
+  endtask
 
 
 
-endmodule
+endclass

@@ -1,8 +1,8 @@
-import cpu_tb_pkg::*;
 
 module simtop;
 
-  cpu_bfm bfm();
+  import cpu_tb_pkg::*;
+  cpu_bfm bfm(.dut_instruction_EX(dut.cpu.instruction_EX), .dut_writedata_WB(dut.cpu.writedata_WB));
 	top #(.instruction_file("tb_instructions.txt")) dut
 	(
 		//////////// CLOCK //////////
@@ -30,9 +30,12 @@ module simtop;
 		.HEX6(bfm.HEX6),
 		.HEX7(bfm.HEX7)
 	);
+
+  testbench testbench_i;
  
-  tester tester_i(.bfm(bfm), .dut_instruction_EX(dut.cpu.instruction_EX), .dut_writedata_WB(dut.cpu.writedata_WB));
-  scoreboard scoreboard_i(.bfm(bfm));
-  coverage coverage_i(.bfm(bfm));
+  initial begin
+    testbench_i = new(bfm);
+    testbench_i.execute();
+  end
 
 endmodule
