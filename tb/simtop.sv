@@ -1,7 +1,7 @@
 
 module simtop;
 
-  import cpu_tb_pkg::*;
+  import cpu_test_pkg::*;
   cpu_bfm bfm(.dut_instruction_EX(dut.cpu.instruction_EX), .dut_writedata_WB(dut.cpu.writedata_WB));
 	top #(.instruction_file("tb_instructions.txt")) dut
 	(

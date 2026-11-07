@@ -28,8 +28,4 @@ package cpu_tb_pkg;
 
   `include "cpu_ref_model.sv"
   `include "cpu_instruction.sv"
-  `include "tester.sv"
-  `include "coverage.sv"
-  `include "scoreboard.sv"
-  `include "testbench.sv"
 endpackage
