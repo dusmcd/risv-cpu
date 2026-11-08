@@ -1,7 +1,7 @@
-module cpu #(parameter string instruction_file) (input logic clk, input logic rst, input logic[17:0] io_in, output logic [31:0] io_out);
+module cpu #(parameter bit read_instructions = 1'b1) (input logic clk, input logic rst, input logic[17:0] io_in, output logic [31:0] io_out);
   logic[31:0] instruction_mem [4095:0];
   logic[31:0] instruction_EX;
-  initial $readmemh(instruction_file, instruction_mem);
+  initial if (read_instructions) $readmemh("hexcode.txt", instruction_mem);
 
   logic[11:0] PC_FETCH;
   logic [31:0] io_WB;

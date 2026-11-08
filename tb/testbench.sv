@@ -5,8 +5,9 @@ class testbench;
   coverage coverage_i;
   scoreboard scoreboard_i;
 
-  function new(virtual cpu_bfm b);
+  function new(virtual cpu_bfm b, int num_instructions);
     this.bfm = b;
+    bfm.num_instructions = num_instructions;
   endfunction
 
   task execute();

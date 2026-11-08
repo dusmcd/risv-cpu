@@ -4,10 +4,9 @@ module simtop;
   import cpu_test_pkg::*;
   cpu_bfm bfm(
 		.dut_instruction_EX(dut.cpu.instruction_EX),
-		.dut_writedata_WB(dut.cpu.writedata_WB),
-		.dut_instruction_mem(dut.cpu.instruction_mem)
+    .dut_writedata_WB(dut.cpu.writedata_WB)
 	);
-	top dut
+	top #(.read_instructions(1'b0)) dut
 	(
 		//////////// CLOCK //////////
 		.CLOCK_50(bfm.clk),
@@ -35,13 +34,22 @@ module simtop;
 		.HEX7(bfm.HEX7)
 	);
 
-	assign bfm.instruction_mem = dut.cpu.instruction_mem;
-
   testbench testbench_i;
  
   initial begin
-    testbench_i = new(bfm);
+    testbench_i = new(bfm, 100);
     testbench_i.execute();
+  end
+
+  initial begin
+    forever begin
+      wait(bfm.load_instr_request);
+      $display("instruction request received...");
+      $readmemh("tb_instructions.txt", dut.cpu.instruction_mem);
+      bfm.load_instr_done = 1;
+
+      wait(bfm.load_instr_request == 0);
+    end
   end
 
 endmodule

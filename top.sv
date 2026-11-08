@@ -4,7 +4,7 @@
 //=======================================================
 
 module top #(
-  parameter string instruction_file = "hexcode.txt"
+  parameter bit read_instructions = 1'b1
 )
 
 (
@@ -61,7 +61,7 @@ module top #(
 //=======================================================
 
   // wire up CPU
-  cpu #(.instruction_file(instruction_file)) cpu(.clk(CLOCK_50), .rst(KEY[0]), .io_in(SW), .io_out(hex_displays));
+  cpu #(.read_instructions(read_instructions)) cpu(.clk(CLOCK_50), .rst(KEY[0]), .io_in(SW), .io_out(hex_displays));
 
   // wire up hex displays to decoder
   hexdriver driver1(.val(hex_displays[3:0]), .HEX(HEX0));
