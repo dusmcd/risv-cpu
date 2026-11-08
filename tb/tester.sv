@@ -26,7 +26,7 @@ class tester;
   
   task execute();
     cpu_instr.create_instr_file(bfm.num_instructions);
-    #1 $readmemh("tb_instructions.txt", bfm.dut_instruction_mem);
+    #1 $readmemh("tb_instructions.txt", bfm.instruction_mem);
     pipeline();
     bfm.reset_cpu();
     repeat((31 + bfm.num_instructions) * 3) @(negedge bfm.clk);

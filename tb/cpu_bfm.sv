@@ -3,7 +3,6 @@ import cpu_tb_pkg::instr_t;
 interface cpu_bfm(
   input logic [31:0] dut_instruction_EX,
   input logic [31:0] dut_writedata_WB,
-  input logic [31:0] dut_instruction_mem [4095:0]
 );
   bit clk;
 	logic [6:0] HEX0,HEX1,HEX2,HEX3,HEX4,HEX5,HEX6,HEX7;
@@ -17,6 +16,7 @@ interface cpu_bfm(
   instr_t instr;
   bit done;
   int num_instructions;
+  logic [31:0] instruction_mem[4095:0];
 
   // drive clock
   initial begin

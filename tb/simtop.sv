@@ -35,6 +35,8 @@ module simtop;
 		.HEX7(bfm.HEX7)
 	);
 
+	assign bfm.instruction_mem = dut.cpu.instruction_mem;
+
   testbench testbench_i;
  
   initial begin
