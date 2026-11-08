@@ -2,8 +2,12 @@
 module simtop;
 
   import cpu_test_pkg::*;
-  cpu_bfm bfm(.dut_instruction_EX(dut.cpu.instruction_EX), .dut_writedata_WB(dut.cpu.writedata_WB));
-	top #(.instruction_file("tb_instructions.txt")) dut
+  cpu_bfm bfm(
+		.dut_instruction_EX(dut.cpu.instruction_EX),
+		.dut_writedata_WB(dut.cpu.writedata_WB),
+		.dut_instruction_mem(dut.cpu.instruction_mem)
+	);
+	top dut
 	(
 		//////////// CLOCK //////////
 		.CLOCK_50(bfm.clk),
