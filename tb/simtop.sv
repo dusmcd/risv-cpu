@@ -1,5 +1,7 @@
 
 module simtop;
+  import uvm_pkg::*;
+  `include "uvm_macros.svh"
 
   import cpu_test_pkg::*;
   cpu_bfm bfm(
@@ -34,17 +36,15 @@ module simtop;
 		.HEX7(bfm.HEX7)
 	);
 
-  testbench testbench_i;
  
   initial begin
-    testbench_i = new(bfm, 100);
-    testbench_i.execute();
+    uvm_config_db #(virtual interface cpu_bfm)::set(null, "*", "bfm", bfm);
+    run_test();
   end
 
   initial begin
     forever begin
       wait(bfm.load_instr_request);
-      $display("instruction request received...");
       $readmemh("tb_instructions.txt", dut.cpu.instruction_mem);
       bfm.load_instr_done = 1;
 

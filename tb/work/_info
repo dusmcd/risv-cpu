@@ -22,17 +22,17 @@ Z3 OL;O;2020.1;71
 R0
 T_opt1
 !s11d cpu_test_pkg /acct/dm99/csce_611/lab3/lab_riu/tb/work 1 cpu_bfm 1 /acct/dm99/csce_611/lab3/lab_riu/tb/work 
-!s110 1794107298
-VUnZa>PC2nSnQI1dVX=`Zz2
+!s110 1794242942
+VBzzb1gecH_Yja:aK1PT[a2
 04 6 4 work simtop fast 0
-=1-000ae431a4f1-6aefe7a2-52ef8-2892b1
+=1-000ae431a4f1-6af1f97d-c646c-2ebcd
 R1
 R2
 n@_opt1
 R3
 valu
 Z4 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z5 !s110 1794107297
+Z5 !s110 1794242913
 !i10b 1
 !s100 Fz;21dl2PMZ6MFeGeLCUd1
 Z6 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -43,15 +43,15 @@ R0
 Z8 w1793915806
 8../alu.sv
 F../alu.sv
-!i122 50
+!i122 53
 L0 7 48
 Z9 OL;L;2020.1;71
 r1
 !s85 0
 31
-Z10 !s108 1794107297.000000
-Z11 !s107 testbench.sv|scoreboard.sv|coverage.sv|tester.sv|cpu_instruction.sv|cpu_ref_model.sv|simtop.sv|generate_instructions.sv|cpu_test_pkg.sv|cpu_bfm.sv|cpu_tb_pkg.sv|../top.sv|../regfile.sv|../instr_decode.sv|../hexdriver.sv|../cpu.sv|../control_unit.sv|../alu.sv|
-Z12 !s90 -sv|../alu.sv|../control_unit.sv|../cpu.sv|../hexdriver.sv|../instr_decode.sv|../regfile.sv|../top.sv|cpu_tb_pkg.sv|cpu_bfm.sv|cpu_test_pkg.sv|generate_instructions.sv|simtop.sv|
+Z10 !s108 1794242913.000000
+Z11 !s107 scoreboard.sv|coverage.sv|random_tester.sv|/usr/local/3rdparty/mentor/questasim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh|/usr/local/3rdparty/mentor/questasim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh|/usr/local/3rdparty/mentor/questasim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh|/usr/local/3rdparty/mentor/questasim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh|/usr/local/3rdparty/mentor/questasim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh|/usr/local/3rdparty/mentor/questasim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh|/usr/local/3rdparty/mentor/questasim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh|/usr/local/3rdparty/mentor/questasim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh|/usr/local/3rdparty/mentor/questasim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh|/usr/local/3rdparty/mentor/questasim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh|/usr/local/3rdparty/mentor/questasim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh|/usr/local/3rdparty/mentor/questasim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh|cpu_instruction.sv|cpu_ref_model.sv|simtop.sv|cpu_test_pkg.sv|cpu_bfm.sv|cpu_tb_pkg.sv|../top.sv|../regfile.sv|../instr_decode.sv|../hexdriver.sv|../cpu.sv|../control_unit.sv|../alu.sv|
+Z12 !s90 -sv|../alu.sv|../control_unit.sv|../cpu.sv|../hexdriver.sv|../instr_decode.sv|../regfile.sv|../top.sv|cpu_tb_pkg.sv|cpu_bfm.sv|cpu_test_pkg.sv|simtop.sv|
 !i113 0
 Z13 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R2
@@ -68,7 +68,7 @@ R0
 w1794101870
 8../control_unit.sv
 F../control_unit.sv
-!i122 50
+!i122 53
 L0 1 97
 R9
 r1
@@ -146,7 +146,7 @@ R0
 w1794103256
 8../cpu.sv
 F../cpu.sv
-!i122 50
+!i122 53
 L0 1 125
 R9
 r1
@@ -175,7 +175,7 @@ R0
 Z23 w1794107020
 Z24 8cpu_bfm.sv
 Z25 Fcpu_bfm.sv
-!i122 50
+!i122 53
 L0 3 0
 R9
 31
@@ -201,7 +201,7 @@ R0
 R23
 R24
 R25
-!i122 50
+!i122 53
 R22
 R9
 31
@@ -226,7 +226,7 @@ w1794018853
 Fcpu_tb_pkg.sv
 Fcpu_ref_model.sv
 Fcpu_instruction.sv
-!i122 50
+!i122 53
 R22
 R9
 r1
@@ -242,22 +242,34 @@ Xcpu_test_pkg
 Z26 !s115 cpu_bfm
 R4
 R14
+Z27 DXx6 mtiUvm 7 uvm_pkg 0 22 lXjlbbgd2P7=0FIB1[zNj3
 R5
 !i10b 1
-!s100 R<hdjA^9cjl_1Xe]ed]D:3
+!s100 _zEI7FoCLz>cEAQl?M_zS2
 R6
-IQ4eS@R27hg[5?7;W878G?3
-VQ4eS@R27hg[5?7;W878G?3
+I?G12`?C36jVABT>KPnmbd0
+V?G12`?C36jVABT>KPnmbd0
 S1
 R0
-w1794106390
+w1794242897
 8cpu_test_pkg.sv
 Fcpu_test_pkg.sv
-Z27 Ftester.sv
+Z28 F/usr/local/3rdparty/mentor/questasim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/uvm_macros.svh
+Z29 F/usr/local/3rdparty/mentor/questasim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_version_defines.svh
+Z30 F/usr/local/3rdparty/mentor/questasim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_message_defines.svh
+Z31 F/usr/local/3rdparty/mentor/questasim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_phase_defines.svh
+Z32 F/usr/local/3rdparty/mentor/questasim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_object_defines.svh
+Z33 F/usr/local/3rdparty/mentor/questasim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_printer_defines.svh
+Z34 F/usr/local/3rdparty/mentor/questasim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_tlm_defines.svh
+Z35 F/usr/local/3rdparty/mentor/questasim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/tlm1/uvm_tlm_imps.svh
+Z36 F/usr/local/3rdparty/mentor/questasim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_sequence_defines.svh
+Z37 F/usr/local/3rdparty/mentor/questasim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_callback_defines.svh
+Z38 F/usr/local/3rdparty/mentor/questasim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_reg_defines.svh
+Z39 F/usr/local/3rdparty/mentor/questasim/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src/macros/uvm_deprecated_defines.svh
+Frandom_tester.sv
 R18
-Z28 Fscoreboard.sv
-Ftestbench.sv
-!i122 50
+Z40 Fscoreboard.sv
+!i122 53
 R22
 R9
 r1
@@ -273,7 +285,7 @@ vgenerate_instructions
 R4
 R14
 DXx4 work 29 generate_instructions_sv_unit 0 22 eS1ZbmDYl]e0oGjN^H86Y1
-R5
+Z41 !s110 1794107370
 R7
 r1
 !s85 0
@@ -283,23 +295,23 @@ I3788IGZNKKB:J<6P;giY_0
 !s105 generate_instructions_sv_unit
 S1
 R0
-Z29 w1794017870
-Z30 8generate_instructions.sv
-Z31 Fgenerate_instructions.sv
-!i122 50
+Z42 w1794017870
+Z43 8generate_instructions.sv
+Z44 Fgenerate_instructions.sv
+!i122 51
 L0 3 13
 R9
 31
-R10
-R11
-R12
+Z45 !s108 1794107370.000000
+Z46 !s107 testbench.sv|scoreboard.sv|coverage.sv|tester.sv|cpu_instruction.sv|cpu_ref_model.sv|simtop.sv|generate_instructions.sv|cpu_test_pkg.sv|cpu_bfm.sv|cpu_tb_pkg.sv|../top.sv|../regfile.sv|../instr_decode.sv|../hexdriver.sv|../cpu.sv|../control_unit.sv|../alu.sv|
+Z47 !s90 -sv|../alu.sv|../control_unit.sv|../cpu.sv|../hexdriver.sv|../instr_decode.sv|../regfile.sv|../top.sv|cpu_tb_pkg.sv|cpu_bfm.sv|cpu_test_pkg.sv|generate_instructions.sv|simtop.sv|
 !i113 0
 R13
 R2
 Xgenerate_instructions_sv_unit
 R4
 R14
-R5
+R41
 VeS1ZbmDYl]e0oGjN^H86Y1
 r1
 !s85 0
@@ -309,16 +321,16 @@ IeS1ZbmDYl]e0oGjN^H86Y1
 !i103 1
 S1
 R0
-R29
-R30
-R31
-!i122 50
+R42
+R43
+R44
+!i122 51
 R22
 R9
 31
-R10
-R11
-R12
+R45
+R46
+R47
 !i113 0
 R13
 R2
@@ -335,7 +347,7 @@ R0
 R8
 8../hexdriver.sv
 F../hexdriver.sv
-!i122 50
+!i122 53
 L0 1 23
 R9
 r1
@@ -360,8 +372,8 @@ R0
 R16
 8../instr_decode.sv
 F../instr_decode.sv
-!i122 50
-Z32 L0 1 22
+!i122 53
+Z48 L0 1 22
 R9
 r1
 !s85 0
@@ -385,7 +397,7 @@ R0
 R16
 8../regfile.sv
 F../regfile.sv
-!i122 50
+!i122 53
 L0 3 38
 R9
 r1
@@ -412,8 +424,8 @@ IfBmQLOI]aE_g8MdZ`NVQi1
 S1
 R0
 R16
-Z33 8scoreboard.sv
-R28
+Z49 8scoreboard.sv
+R40
 !i122 7
 L0 3 16
 R9
@@ -438,8 +450,8 @@ Ieg1l3?>hkT2nY1]EMez>n1
 S1
 R0
 R16
-R33
-R28
+R49
+R40
 !i122 7
 R22
 R9
@@ -452,21 +464,34 @@ R13
 R2
 vsimtop
 R4
+R27
 R14
-DXx4 work 12 cpu_test_pkg 0 22 Q4eS@R27hg[5?7;W878G?3
+DXx4 work 12 cpu_test_pkg 0 22 ?G12`?C36jVABT>KPnmbd0
 R5
 !i10b 1
-!s100 VE@c6z@W5TOXMB^_K^2302
+!s100 _mj1EoBB80JKB742WYW;F3
 R6
-IzSb7_h6PDdcekY[mo3YNm0
+INm]2ez[cJ2`8::HBQ607<2
 R7
 S1
 R0
-w1794107292
-Z34 8simtop.sv
-Z35 Fsimtop.sv
-!i122 50
-L0 2 54
+w1794241988
+Z50 8simtop.sv
+Z51 Fsimtop.sv
+R28
+R29
+R30
+R31
+R32
+R33
+R34
+R35
+R36
+R37
+R38
+R39
+!i122 53
+L0 2 6525
 R9
 r1
 !s85 0
@@ -491,8 +516,8 @@ IJzKi`C?NRhgVQilD:6:XX0
 S1
 R0
 w1793926211
-R34
-R35
+R50
+R51
 !i122 7
 R22
 R9
@@ -514,10 +539,10 @@ R7
 S1
 R0
 R16
-Z36 8tester.sv
-R27
+Z52 8tester.sv
+Z53 Ftester.sv
 !i122 7
-R32
+R48
 R9
 r1
 !s85 0
@@ -542,8 +567,8 @@ IPcECB8f5J^TOm[Z@@_cA_0
 S1
 R0
 w1794016777
-R36
-R27
+R52
+R53
 !i122 14
 R22
 R9
@@ -567,7 +592,7 @@ R0
 w1794103531
 8../top.sv
 F../top.sv
-!i122 50
+!i122 53
 L0 6 108
 R9
 r1

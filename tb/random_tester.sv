@@ -1,4 +1,4 @@
-class tester;
+class random_tester;
   virtual cpu_bfm bfm;
   CPUInstruction cpu_instr;
  

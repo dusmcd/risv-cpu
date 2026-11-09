@@ -37,7 +37,6 @@ class coverage;
   task execute();
     wait(bfm.done);
     $display("Coverage = %.2f %%", cg.get_inst_coverage());
-    $finish;
   endtask
 
 
