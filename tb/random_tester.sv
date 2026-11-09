@@ -24,12 +24,12 @@ class random_tester;
   endtask
 
   
-  task execute();
-    cpu_instr.create_instr_file(bfm.num_instructions);
+  task execute(int num_instructions);
+    cpu_instr.create_instr_file(num_instructions);
     bfm.load_instructions();
     pipeline();
     bfm.reset_cpu();
-    repeat(300) @(negedge bfm.clk);
+    repeat((31 + num_instructions) * 3) @(negedge bfm.clk);
     bfm.done = 1'b1;
   endtask
 

@@ -15,7 +15,6 @@ interface cpu_bfm(
   bit valid_WB;
   instr_t instr;
   bit done;
-  int num_instructions;
   bit load_instr_request = 0;
   bit load_instr_done = 0;
 
@@ -38,7 +37,6 @@ interface cpu_bfm(
   endtask
 
   task load_instructions();
-    $display("loading instructions...");
     load_instr_done = 0;
     load_instr_request = 1;
 

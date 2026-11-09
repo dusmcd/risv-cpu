@@ -5,7 +5,7 @@ class random_test extends uvm_test;
 
   function new (string name, uvm_component parent);
     super.new(name, parent);
-    if (!uvm_config_db #(virtual interface cpu_bfm)::get(null, "*", "bfm", bfm)
+    if (!uvm_config_db #(virtual interface cpu_bfm)::get(null, "*", "bfm", bfm))
       $fatal("Failed to get BFM");
   endfunction
 
@@ -25,7 +25,7 @@ class random_test extends uvm_test;
       scoreboard_i.execute();
     join_none
 
-    random_tester_i.execute();
+    random_tester_i.execute(100);
     phase.drop_objection(this);
 
   endtask

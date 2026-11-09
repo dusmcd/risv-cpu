@@ -6,4 +6,5 @@ package cpu_test_pkg;
   `include "random_tester.sv"
   `include "coverage.sv"
   `include "scoreboard.sv"
+  `include "random_test.sv"
 endpackage
