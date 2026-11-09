@@ -15,19 +15,7 @@ class CPUInstruction;
     if (file == 0)
       $fatal("Could not create file");
 
-    // generate instructions to fill out regfile with random values
-    for (int i = 1; i < 32; i++) begin
-      bit [31:0] instruction;
-      if (!randomize())
-        $fatal("Randomization failed");
-
-      rd = i;
-      instr = ADDI;
-      rs1 = 5'b0;
-      instruction = encode_instr();
-      $fdisplay(file, "%h", instruction);
-    end
-
+    randomize_regs(file);
     for (int i = 0; i < num; i++) begin
       bit [31:0] instruction;
       if (!randomize())
@@ -38,6 +26,42 @@ class CPUInstruction;
       
     end
     $fclose(file);
+  endfunction
+
+  local function automatic void randomize_regs(input int file);
+    // generate instructions to fill out regfile with random values
+    for (int i = 1; i < 32; i++) begin
+      if (!randomize())
+        $fatal("Randomization failed");
+
+      rd = i;
+      instr = ADDI;
+      rs1 = 5'b0;
+      $fdisplay(file, "%h", encode_instr());
+    end
+  endfunction
+
+  function automatic void create_raw_instr_file(input int num);
+    int file = $fopen("tb_instructions.txt", "w");
+    bit [4:0] previous_rd = 5'b0;
+    if (file == 0) begin
+      $fatal("Could not create instruction file");
+    end
+
+    randomize_regs(file);
+    repeat(num) begin
+      if (!randomize())
+        $fatal("Randomization failed");
+
+      if (previous_rd != 5'b0) rs1 = previous_rd;
+
+      $fdisplay(file, "%h", encode_instr());
+
+      previous_rd = rd;
+
+    end
+    $fclose(file);
+
   endfunction
 
 

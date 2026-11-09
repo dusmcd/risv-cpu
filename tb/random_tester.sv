@@ -7,6 +7,11 @@ class random_tester;
     cpu_instr = new();
   endfunction
 
+  protected virtual task generate_instructions(int num_instructions);
+    cpu_instr.create_instr_file(num_instructions);
+    bfm.load_instructions();
+  endtask
+
   local task pipeline();
     fork
         
@@ -25,8 +30,7 @@ class random_tester;
 
   
   task execute(int num_instructions);
-    cpu_instr.create_instr_file(num_instructions);
-    bfm.load_instructions();
+    generate_instructions(num_instructions);
     pipeline();
     bfm.reset_cpu();
     repeat((31 + num_instructions) * 3) @(negedge bfm.clk);
