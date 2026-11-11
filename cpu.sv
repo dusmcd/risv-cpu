@@ -124,7 +124,7 @@ module cpu(input logic clk, input logic rst, input logic[17:0] io_in, output log
     if (regsel_WB == 2'b0) writedata_WB = io_WB;
     else if (regsel_WB == 2'b01) writedata_WB = upper_imm_WB;
     else if (regsel_WB == 2'b10) writedata_WB = alu_output_WB;
-    else if (regsel_WB == 2'd3) writedata_WB = {20'b0, PC_EX + 1};
+    else if (regsel_WB == 2'd3) writedata_WB = {20'b0, PC_EX};
     else writedata_WB = 32'b0;
   end
 

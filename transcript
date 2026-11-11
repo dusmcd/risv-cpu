@@ -1,5 +1,5 @@
 # vsim -pedanticerrors -hazards -c -sva -immedassert work.simtop -do "/dev/stdin" 
-# Start time: 15:51:51 on Nov 11,2026
+# Start time: 16:45:00 on Nov 11,2026
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # //  Questa Sim-64
 # //  Version 2020.1 linux_x86_64 Jan 28 2020
@@ -19,6 +19,7 @@
 # Loading work.simtop(fast)
 # do /dev/stdin
 # clock #:           0   instruction_EX: xxxxxxxx
+# gpio_we: 0, stall_EX: x
 # x          0: xxxxxxxx
 # x          1: xxxxxxxx
 # x          2: xxxxxxxx
@@ -52,6 +53,7 @@
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
 # clock #:           1   instruction_EX: 00000000
+# gpio_we: 0, stall_EX: 0
 # x          0: xxxxxxxx
 # x          1: xxxxxxxx
 # x          2: xxxxxxxx
@@ -85,6 +87,7 @@
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
 # clock #:           2   instruction_EX: 00000093
+# gpio_we: 0, stall_EX: 0
 # x          0: xxxxxxxx
 # x          1: xxxxxxxx
 # x          2: xxxxxxxx
@@ -118,6 +121,7 @@
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
 # clock #:           3   instruction_EX: 00500113
+# gpio_we: 0, stall_EX: 0
 # x          0: xxxxxxxx
 # x          1: xxxxxxxx
 # x          2: xxxxxxxx
@@ -151,6 +155,7 @@
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
 # clock #:           4   instruction_EX: 00010c63
+# gpio_we: 0, stall_EX: 0
 # x          0: xxxxxxxx
 # x          1: 00000000
 # x          2: xxxxxxxx
@@ -184,6 +189,7 @@
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
 # clock #:           5   instruction_EX: 00c001ef
+# gpio_we: 0, stall_EX: 0
 # x          0: xxxxxxxx
 # x          1: 00000000
 # x          2: 00000005
@@ -217,6 +223,7 @@
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
 # clock #:           6   instruction_EX: fff10113
+# gpio_we: 0, stall_EX: 1
 # x          0: xxxxxxxx
 # x          1: 00000000
 # x          2: 00000005
@@ -250,10 +257,11 @@
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
 # clock #:           7   instruction_EX: 00208093
+# gpio_we: 0, stall_EX: 0
 # x          0: xxxxxxxx
 # x          1: 00000000
 # x          2: 00000005
-# x          3: 00000005
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -283,10 +291,11 @@
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
 # clock #:           8   instruction_EX: 00018067
+# gpio_we: 0, stall_EX: 0
 # x          0: xxxxxxxx
 # x          1: 00000000
 # x          2: 00000005
-# x          3: 00000005
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -316,10 +325,11 @@
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
 # clock #:           9   instruction_EX: f0209073
+# gpio_we: 0, stall_EX: 1
 # x          0: xxxxxxxx
 # x          1: 00000002
 # x          2: 00000005
-# x          3: 00000005
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -348,11 +358,12 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          10   instruction_EX: ff5ff06f
-# x          0: 00000009
+# clock #:          10   instruction_EX: fff10113
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000008
 # x          1: 00000002
 # x          2: 00000005
-# x          3: 00000005
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -381,11 +392,12 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          11   instruction_EX: 00208093
-# x          0: 00000009
+# clock #:          11   instruction_EX: ff5ff06f
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000008
 # x          1: 00000002
 # x          2: 00000005
-# x          3: 00000005
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -414,11 +426,12 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          12   instruction_EX: 00010c63
-# x          0: 00000007
+# clock #:          12   instruction_EX: 00208093
+# gpio_we: 0, stall_EX: 1
+# x          0: 00000008
 # x          1: 00000002
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000004
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -447,11 +460,12 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          13   instruction_EX: 00c001ef
-# x          0: 00000007
+# clock #:          13   instruction_EX: 00010c63
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000006
 # x          1: 00000002
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000004
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -480,11 +494,12 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          14   instruction_EX: fff10113
-# x          0: 00000007
+# clock #:          14   instruction_EX: 00c001ef
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000006
 # x          1: 00000002
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000004
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -513,11 +528,12 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          15   instruction_EX: 00208093
-# x          0: 00000007
+# clock #:          15   instruction_EX: fff10113
+# gpio_we: 0, stall_EX: 1
+# x          0: 00000006
 # x          1: 00000002
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000004
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -546,11 +562,12 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          16   instruction_EX: 00018067
-# x          0: 00000007
+# clock #:          16   instruction_EX: 00208093
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000006
 # x          1: 00000002
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000004
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -579,11 +596,46 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          17   instruction_EX: f0209073
-# x          0: 00000007
+# clock #:          17   instruction_EX: 00018067
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000006
+# x          1: 00000002
+# x          2: 00000004
+# x          3: 00000004
+# x          4: xxxxxxxx
+# x          5: xxxxxxxx
+# x          6: xxxxxxxx
+# x          7: xxxxxxxx
+# x          8: xxxxxxxx
+# x          9: xxxxxxxx
+# x         10: xxxxxxxx
+# x         11: xxxxxxxx
+# x         12: xxxxxxxx
+# x         13: xxxxxxxx
+# x         14: xxxxxxxx
+# x         15: xxxxxxxx
+# x         16: xxxxxxxx
+# x         17: xxxxxxxx
+# x         18: xxxxxxxx
+# x         19: xxxxxxxx
+# x         20: xxxxxxxx
+# x         21: xxxxxxxx
+# x         22: xxxxxxxx
+# x         23: xxxxxxxx
+# x         24: xxxxxxxx
+# x         25: xxxxxxxx
+# x         26: xxxxxxxx
+# x         27: xxxxxxxx
+# x         28: xxxxxxxx
+# x         29: xxxxxxxx
+# x         30: xxxxxxxx
+# x         31: xxxxxxxx
+# clock #:          18   instruction_EX: f0209073
+# gpio_we: 0, stall_EX: 1
+# x          0: 00000006
 # x          1: 00000004
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000004
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -612,11 +664,12 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          18   instruction_EX: ff5ff06f
-# x          0: 00000009
+# clock #:          19   instruction_EX: fff10113
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000008
 # x          1: 00000004
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000004
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -645,11 +698,12 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          19   instruction_EX: 00208093
-# x          0: 00000009
+# clock #:          20   instruction_EX: ff5ff06f
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000008
 # x          1: 00000004
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000004
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -678,11 +732,12 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          20   instruction_EX: 00010c63
-# x          0: 00000007
+# clock #:          21   instruction_EX: 00208093
+# gpio_we: 0, stall_EX: 1
+# x          0: 00000008
 # x          1: 00000004
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000003
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -711,11 +766,12 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          21   instruction_EX: 00c001ef
-# x          0: 00000007
+# clock #:          22   instruction_EX: 00010c63
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000006
 # x          1: 00000004
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000003
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -744,11 +800,12 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          22   instruction_EX: fff10113
-# x          0: 00000007
+# clock #:          23   instruction_EX: 00c001ef
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000006
 # x          1: 00000004
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000003
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -777,11 +834,12 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          23   instruction_EX: 00208093
-# x          0: 00000007
+# clock #:          24   instruction_EX: fff10113
+# gpio_we: 0, stall_EX: 1
+# x          0: 00000006
 # x          1: 00000004
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000003
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -810,11 +868,12 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          24   instruction_EX: 00018067
-# x          0: 00000007
+# clock #:          25   instruction_EX: 00208093
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000006
 # x          1: 00000004
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000003
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -843,11 +902,46 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          25   instruction_EX: f0209073
-# x          0: 00000007
+# clock #:          26   instruction_EX: 00018067
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000006
+# x          1: 00000004
+# x          2: 00000003
+# x          3: 00000004
+# x          4: xxxxxxxx
+# x          5: xxxxxxxx
+# x          6: xxxxxxxx
+# x          7: xxxxxxxx
+# x          8: xxxxxxxx
+# x          9: xxxxxxxx
+# x         10: xxxxxxxx
+# x         11: xxxxxxxx
+# x         12: xxxxxxxx
+# x         13: xxxxxxxx
+# x         14: xxxxxxxx
+# x         15: xxxxxxxx
+# x         16: xxxxxxxx
+# x         17: xxxxxxxx
+# x         18: xxxxxxxx
+# x         19: xxxxxxxx
+# x         20: xxxxxxxx
+# x         21: xxxxxxxx
+# x         22: xxxxxxxx
+# x         23: xxxxxxxx
+# x         24: xxxxxxxx
+# x         25: xxxxxxxx
+# x         26: xxxxxxxx
+# x         27: xxxxxxxx
+# x         28: xxxxxxxx
+# x         29: xxxxxxxx
+# x         30: xxxxxxxx
+# x         31: xxxxxxxx
+# clock #:          27   instruction_EX: f0209073
+# gpio_we: 0, stall_EX: 1
+# x          0: 00000006
 # x          1: 00000006
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000003
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -876,11 +970,12 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          26   instruction_EX: ff5ff06f
-# x          0: 00000009
+# clock #:          28   instruction_EX: fff10113
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000008
 # x          1: 00000006
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000003
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -909,11 +1004,12 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          27   instruction_EX: 00208093
-# x          0: 00000009
+# clock #:          29   instruction_EX: ff5ff06f
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000008
 # x          1: 00000006
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000003
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -942,11 +1038,12 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          28   instruction_EX: 00010c63
-# x          0: 00000007
+# clock #:          30   instruction_EX: 00208093
+# gpio_we: 0, stall_EX: 1
+# x          0: 00000008
 # x          1: 00000006
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000002
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -975,11 +1072,12 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          29   instruction_EX: 00c001ef
-# x          0: 00000007
+# clock #:          31   instruction_EX: 00010c63
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000006
 # x          1: 00000006
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000002
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -1008,11 +1106,12 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          30   instruction_EX: fff10113
-# x          0: 00000007
+# clock #:          32   instruction_EX: 00c001ef
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000006
 # x          1: 00000006
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000002
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -1041,11 +1140,12 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          31   instruction_EX: 00208093
-# x          0: 00000007
+# clock #:          33   instruction_EX: fff10113
+# gpio_we: 0, stall_EX: 1
+# x          0: 00000006
 # x          1: 00000006
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000002
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -1074,11 +1174,12 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          32   instruction_EX: 00018067
-# x          0: 00000007
+# clock #:          34   instruction_EX: 00208093
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000006
 # x          1: 00000006
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000002
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -1107,11 +1208,46 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          33   instruction_EX: f0209073
-# x          0: 00000007
+# clock #:          35   instruction_EX: 00018067
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000006
+# x          1: 00000006
+# x          2: 00000002
+# x          3: 00000004
+# x          4: xxxxxxxx
+# x          5: xxxxxxxx
+# x          6: xxxxxxxx
+# x          7: xxxxxxxx
+# x          8: xxxxxxxx
+# x          9: xxxxxxxx
+# x         10: xxxxxxxx
+# x         11: xxxxxxxx
+# x         12: xxxxxxxx
+# x         13: xxxxxxxx
+# x         14: xxxxxxxx
+# x         15: xxxxxxxx
+# x         16: xxxxxxxx
+# x         17: xxxxxxxx
+# x         18: xxxxxxxx
+# x         19: xxxxxxxx
+# x         20: xxxxxxxx
+# x         21: xxxxxxxx
+# x         22: xxxxxxxx
+# x         23: xxxxxxxx
+# x         24: xxxxxxxx
+# x         25: xxxxxxxx
+# x         26: xxxxxxxx
+# x         27: xxxxxxxx
+# x         28: xxxxxxxx
+# x         29: xxxxxxxx
+# x         30: xxxxxxxx
+# x         31: xxxxxxxx
+# clock #:          36   instruction_EX: f0209073
+# gpio_we: 0, stall_EX: 1
+# x          0: 00000006
 # x          1: 00000008
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000002
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -1140,11 +1276,12 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          34   instruction_EX: ff5ff06f
-# x          0: 00000009
+# clock #:          37   instruction_EX: fff10113
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000008
 # x          1: 00000008
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000002
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -1173,110 +1310,12 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          35   instruction_EX: 00208093
-# x          0: 00000009
+# clock #:          38   instruction_EX: ff5ff06f
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000008
 # x          1: 00000008
-# x          2: 00000005
-# x          3: 00000005
-# x          4: xxxxxxxx
-# x          5: xxxxxxxx
-# x          6: xxxxxxxx
-# x          7: xxxxxxxx
-# x          8: xxxxxxxx
-# x          9: xxxxxxxx
-# x         10: xxxxxxxx
-# x         11: xxxxxxxx
-# x         12: xxxxxxxx
-# x         13: xxxxxxxx
-# x         14: xxxxxxxx
-# x         15: xxxxxxxx
-# x         16: xxxxxxxx
-# x         17: xxxxxxxx
-# x         18: xxxxxxxx
-# x         19: xxxxxxxx
-# x         20: xxxxxxxx
-# x         21: xxxxxxxx
-# x         22: xxxxxxxx
-# x         23: xxxxxxxx
-# x         24: xxxxxxxx
-# x         25: xxxxxxxx
-# x         26: xxxxxxxx
-# x         27: xxxxxxxx
-# x         28: xxxxxxxx
-# x         29: xxxxxxxx
-# x         30: xxxxxxxx
-# x         31: xxxxxxxx
-# clock #:          36   instruction_EX: 00010c63
-# x          0: 00000007
-# x          1: 00000008
-# x          2: 00000005
-# x          3: 00000005
-# x          4: xxxxxxxx
-# x          5: xxxxxxxx
-# x          6: xxxxxxxx
-# x          7: xxxxxxxx
-# x          8: xxxxxxxx
-# x          9: xxxxxxxx
-# x         10: xxxxxxxx
-# x         11: xxxxxxxx
-# x         12: xxxxxxxx
-# x         13: xxxxxxxx
-# x         14: xxxxxxxx
-# x         15: xxxxxxxx
-# x         16: xxxxxxxx
-# x         17: xxxxxxxx
-# x         18: xxxxxxxx
-# x         19: xxxxxxxx
-# x         20: xxxxxxxx
-# x         21: xxxxxxxx
-# x         22: xxxxxxxx
-# x         23: xxxxxxxx
-# x         24: xxxxxxxx
-# x         25: xxxxxxxx
-# x         26: xxxxxxxx
-# x         27: xxxxxxxx
-# x         28: xxxxxxxx
-# x         29: xxxxxxxx
-# x         30: xxxxxxxx
-# x         31: xxxxxxxx
-# clock #:          37   instruction_EX: 00c001ef
-# x          0: 00000007
-# x          1: 00000008
-# x          2: 00000005
-# x          3: 00000005
-# x          4: xxxxxxxx
-# x          5: xxxxxxxx
-# x          6: xxxxxxxx
-# x          7: xxxxxxxx
-# x          8: xxxxxxxx
-# x          9: xxxxxxxx
-# x         10: xxxxxxxx
-# x         11: xxxxxxxx
-# x         12: xxxxxxxx
-# x         13: xxxxxxxx
-# x         14: xxxxxxxx
-# x         15: xxxxxxxx
-# x         16: xxxxxxxx
-# x         17: xxxxxxxx
-# x         18: xxxxxxxx
-# x         19: xxxxxxxx
-# x         20: xxxxxxxx
-# x         21: xxxxxxxx
-# x         22: xxxxxxxx
-# x         23: xxxxxxxx
-# x         24: xxxxxxxx
-# x         25: xxxxxxxx
-# x         26: xxxxxxxx
-# x         27: xxxxxxxx
-# x         28: xxxxxxxx
-# x         29: xxxxxxxx
-# x         30: xxxxxxxx
-# x         31: xxxxxxxx
-# clock #:          38   instruction_EX: fff10113
-# x          0: 00000007
-# x          1: 00000008
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000002
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -1306,10 +1345,11 @@
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
 # clock #:          39   instruction_EX: 00208093
-# x          0: 00000007
+# gpio_we: 0, stall_EX: 1
+# x          0: 00000008
 # x          1: 00000008
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000001
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -1338,11 +1378,12 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          40   instruction_EX: 00018067
-# x          0: 00000007
+# clock #:          40   instruction_EX: 00010c63
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000006
 # x          1: 00000008
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000001
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -1371,11 +1412,148 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# clock #:          41   instruction_EX: f0209073
-# x          0: 00000007
+# clock #:          41   instruction_EX: 00c001ef
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000006
+# x          1: 00000008
+# x          2: 00000001
+# x          3: 00000004
+# x          4: xxxxxxxx
+# x          5: xxxxxxxx
+# x          6: xxxxxxxx
+# x          7: xxxxxxxx
+# x          8: xxxxxxxx
+# x          9: xxxxxxxx
+# x         10: xxxxxxxx
+# x         11: xxxxxxxx
+# x         12: xxxxxxxx
+# x         13: xxxxxxxx
+# x         14: xxxxxxxx
+# x         15: xxxxxxxx
+# x         16: xxxxxxxx
+# x         17: xxxxxxxx
+# x         18: xxxxxxxx
+# x         19: xxxxxxxx
+# x         20: xxxxxxxx
+# x         21: xxxxxxxx
+# x         22: xxxxxxxx
+# x         23: xxxxxxxx
+# x         24: xxxxxxxx
+# x         25: xxxxxxxx
+# x         26: xxxxxxxx
+# x         27: xxxxxxxx
+# x         28: xxxxxxxx
+# x         29: xxxxxxxx
+# x         30: xxxxxxxx
+# x         31: xxxxxxxx
+# clock #:          42   instruction_EX: fff10113
+# gpio_we: 0, stall_EX: 1
+# x          0: 00000006
+# x          1: 00000008
+# x          2: 00000001
+# x          3: 00000004
+# x          4: xxxxxxxx
+# x          5: xxxxxxxx
+# x          6: xxxxxxxx
+# x          7: xxxxxxxx
+# x          8: xxxxxxxx
+# x          9: xxxxxxxx
+# x         10: xxxxxxxx
+# x         11: xxxxxxxx
+# x         12: xxxxxxxx
+# x         13: xxxxxxxx
+# x         14: xxxxxxxx
+# x         15: xxxxxxxx
+# x         16: xxxxxxxx
+# x         17: xxxxxxxx
+# x         18: xxxxxxxx
+# x         19: xxxxxxxx
+# x         20: xxxxxxxx
+# x         21: xxxxxxxx
+# x         22: xxxxxxxx
+# x         23: xxxxxxxx
+# x         24: xxxxxxxx
+# x         25: xxxxxxxx
+# x         26: xxxxxxxx
+# x         27: xxxxxxxx
+# x         28: xxxxxxxx
+# x         29: xxxxxxxx
+# x         30: xxxxxxxx
+# x         31: xxxxxxxx
+# clock #:          43   instruction_EX: 00208093
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000006
+# x          1: 00000008
+# x          2: 00000001
+# x          3: 00000004
+# x          4: xxxxxxxx
+# x          5: xxxxxxxx
+# x          6: xxxxxxxx
+# x          7: xxxxxxxx
+# x          8: xxxxxxxx
+# x          9: xxxxxxxx
+# x         10: xxxxxxxx
+# x         11: xxxxxxxx
+# x         12: xxxxxxxx
+# x         13: xxxxxxxx
+# x         14: xxxxxxxx
+# x         15: xxxxxxxx
+# x         16: xxxxxxxx
+# x         17: xxxxxxxx
+# x         18: xxxxxxxx
+# x         19: xxxxxxxx
+# x         20: xxxxxxxx
+# x         21: xxxxxxxx
+# x         22: xxxxxxxx
+# x         23: xxxxxxxx
+# x         24: xxxxxxxx
+# x         25: xxxxxxxx
+# x         26: xxxxxxxx
+# x         27: xxxxxxxx
+# x         28: xxxxxxxx
+# x         29: xxxxxxxx
+# x         30: xxxxxxxx
+# x         31: xxxxxxxx
+# clock #:          44   instruction_EX: 00018067
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000006
+# x          1: 00000008
+# x          2: 00000001
+# x          3: 00000004
+# x          4: xxxxxxxx
+# x          5: xxxxxxxx
+# x          6: xxxxxxxx
+# x          7: xxxxxxxx
+# x          8: xxxxxxxx
+# x          9: xxxxxxxx
+# x         10: xxxxxxxx
+# x         11: xxxxxxxx
+# x         12: xxxxxxxx
+# x         13: xxxxxxxx
+# x         14: xxxxxxxx
+# x         15: xxxxxxxx
+# x         16: xxxxxxxx
+# x         17: xxxxxxxx
+# x         18: xxxxxxxx
+# x         19: xxxxxxxx
+# x         20: xxxxxxxx
+# x         21: xxxxxxxx
+# x         22: xxxxxxxx
+# x         23: xxxxxxxx
+# x         24: xxxxxxxx
+# x         25: xxxxxxxx
+# x         26: xxxxxxxx
+# x         27: xxxxxxxx
+# x         28: xxxxxxxx
+# x         29: xxxxxxxx
+# x         30: xxxxxxxx
+# x         31: xxxxxxxx
+# clock #:          45   instruction_EX: f0209073
+# gpio_we: 0, stall_EX: 1
+# x          0: 00000006
 # x          1: 0000000a
-# x          2: 00000005
-# x          3: 00000005
+# x          2: 00000001
+# x          3: 00000004
 # x          4: xxxxxxxx
 # x          5: xxxxxxxx
 # x          6: xxxxxxxx
@@ -1404,7 +1582,390 @@
 # x         29: xxxxxxxx
 # x         30: xxxxxxxx
 # x         31: xxxxxxxx
-# ** Note: $finish    : simtop.sv(74)
-#    Time: 411 ns  Iteration: 0  Instance: /simtop
-# End time: 15:51:51 on Nov 11,2026, Elapsed time: 0:00:00
+# clock #:          46   instruction_EX: fff10113
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000008
+# x          1: 0000000a
+# x          2: 00000001
+# x          3: 00000004
+# x          4: xxxxxxxx
+# x          5: xxxxxxxx
+# x          6: xxxxxxxx
+# x          7: xxxxxxxx
+# x          8: xxxxxxxx
+# x          9: xxxxxxxx
+# x         10: xxxxxxxx
+# x         11: xxxxxxxx
+# x         12: xxxxxxxx
+# x         13: xxxxxxxx
+# x         14: xxxxxxxx
+# x         15: xxxxxxxx
+# x         16: xxxxxxxx
+# x         17: xxxxxxxx
+# x         18: xxxxxxxx
+# x         19: xxxxxxxx
+# x         20: xxxxxxxx
+# x         21: xxxxxxxx
+# x         22: xxxxxxxx
+# x         23: xxxxxxxx
+# x         24: xxxxxxxx
+# x         25: xxxxxxxx
+# x         26: xxxxxxxx
+# x         27: xxxxxxxx
+# x         28: xxxxxxxx
+# x         29: xxxxxxxx
+# x         30: xxxxxxxx
+# x         31: xxxxxxxx
+# clock #:          47   instruction_EX: ff5ff06f
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000008
+# x          1: 0000000a
+# x          2: 00000001
+# x          3: 00000004
+# x          4: xxxxxxxx
+# x          5: xxxxxxxx
+# x          6: xxxxxxxx
+# x          7: xxxxxxxx
+# x          8: xxxxxxxx
+# x          9: xxxxxxxx
+# x         10: xxxxxxxx
+# x         11: xxxxxxxx
+# x         12: xxxxxxxx
+# x         13: xxxxxxxx
+# x         14: xxxxxxxx
+# x         15: xxxxxxxx
+# x         16: xxxxxxxx
+# x         17: xxxxxxxx
+# x         18: xxxxxxxx
+# x         19: xxxxxxxx
+# x         20: xxxxxxxx
+# x         21: xxxxxxxx
+# x         22: xxxxxxxx
+# x         23: xxxxxxxx
+# x         24: xxxxxxxx
+# x         25: xxxxxxxx
+# x         26: xxxxxxxx
+# x         27: xxxxxxxx
+# x         28: xxxxxxxx
+# x         29: xxxxxxxx
+# x         30: xxxxxxxx
+# x         31: xxxxxxxx
+# clock #:          48   instruction_EX: 00208093
+# gpio_we: 0, stall_EX: 1
+# x          0: 00000008
+# x          1: 0000000a
+# x          2: 00000000
+# x          3: 00000004
+# x          4: xxxxxxxx
+# x          5: xxxxxxxx
+# x          6: xxxxxxxx
+# x          7: xxxxxxxx
+# x          8: xxxxxxxx
+# x          9: xxxxxxxx
+# x         10: xxxxxxxx
+# x         11: xxxxxxxx
+# x         12: xxxxxxxx
+# x         13: xxxxxxxx
+# x         14: xxxxxxxx
+# x         15: xxxxxxxx
+# x         16: xxxxxxxx
+# x         17: xxxxxxxx
+# x         18: xxxxxxxx
+# x         19: xxxxxxxx
+# x         20: xxxxxxxx
+# x         21: xxxxxxxx
+# x         22: xxxxxxxx
+# x         23: xxxxxxxx
+# x         24: xxxxxxxx
+# x         25: xxxxxxxx
+# x         26: xxxxxxxx
+# x         27: xxxxxxxx
+# x         28: xxxxxxxx
+# x         29: xxxxxxxx
+# x         30: xxxxxxxx
+# x         31: xxxxxxxx
+# clock #:          49   instruction_EX: 00010c63
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000006
+# x          1: 0000000a
+# x          2: 00000000
+# x          3: 00000004
+# x          4: xxxxxxxx
+# x          5: xxxxxxxx
+# x          6: xxxxxxxx
+# x          7: xxxxxxxx
+# x          8: xxxxxxxx
+# x          9: xxxxxxxx
+# x         10: xxxxxxxx
+# x         11: xxxxxxxx
+# x         12: xxxxxxxx
+# x         13: xxxxxxxx
+# x         14: xxxxxxxx
+# x         15: xxxxxxxx
+# x         16: xxxxxxxx
+# x         17: xxxxxxxx
+# x         18: xxxxxxxx
+# x         19: xxxxxxxx
+# x         20: xxxxxxxx
+# x         21: xxxxxxxx
+# x         22: xxxxxxxx
+# x         23: xxxxxxxx
+# x         24: xxxxxxxx
+# x         25: xxxxxxxx
+# x         26: xxxxxxxx
+# x         27: xxxxxxxx
+# x         28: xxxxxxxx
+# x         29: xxxxxxxx
+# x         30: xxxxxxxx
+# x         31: xxxxxxxx
+# clock #:          50   instruction_EX: 00c001ef
+# gpio_we: 0, stall_EX: 1
+# x          0: 00000006
+# x          1: 0000000a
+# x          2: 00000000
+# x          3: 00000004
+# x          4: xxxxxxxx
+# x          5: xxxxxxxx
+# x          6: xxxxxxxx
+# x          7: xxxxxxxx
+# x          8: xxxxxxxx
+# x          9: xxxxxxxx
+# x         10: xxxxxxxx
+# x         11: xxxxxxxx
+# x         12: xxxxxxxx
+# x         13: xxxxxxxx
+# x         14: xxxxxxxx
+# x         15: xxxxxxxx
+# x         16: xxxxxxxx
+# x         17: xxxxxxxx
+# x         18: xxxxxxxx
+# x         19: xxxxxxxx
+# x         20: xxxxxxxx
+# x         21: xxxxxxxx
+# x         22: xxxxxxxx
+# x         23: xxxxxxxx
+# x         24: xxxxxxxx
+# x         25: xxxxxxxx
+# x         26: xxxxxxxx
+# x         27: xxxxxxxx
+# x         28: xxxxxxxx
+# x         29: xxxxxxxx
+# x         30: xxxxxxxx
+# x         31: xxxxxxxx
+# clock #:          51   instruction_EX: f0209073
+# gpio_we: 1, stall_EX: 0
+# x          0: 00000006
+# x          1: 0000000a
+# x          2: 00000000
+# x          3: 00000004
+# x          4: xxxxxxxx
+# x          5: xxxxxxxx
+# x          6: xxxxxxxx
+# x          7: xxxxxxxx
+# x          8: xxxxxxxx
+# x          9: xxxxxxxx
+# x         10: xxxxxxxx
+# x         11: xxxxxxxx
+# x         12: xxxxxxxx
+# x         13: xxxxxxxx
+# x         14: xxxxxxxx
+# x         15: xxxxxxxx
+# x         16: xxxxxxxx
+# x         17: xxxxxxxx
+# x         18: xxxxxxxx
+# x         19: xxxxxxxx
+# x         20: xxxxxxxx
+# x         21: xxxxxxxx
+# x         22: xxxxxxxx
+# x         23: xxxxxxxx
+# x         24: xxxxxxxx
+# x         25: xxxxxxxx
+# x         26: xxxxxxxx
+# x         27: xxxxxxxx
+# x         28: xxxxxxxx
+# x         29: xxxxxxxx
+# x         30: xxxxxxxx
+# x         31: xxxxxxxx
+# clock #:          52   instruction_EX: xxxxxxxx
+# gpio_we: 0, stall_EX: 0
+# x          0: 00000006
+# x          1: 0000000a
+# x          2: 00000000
+# x          3: 00000004
+# x          4: xxxxxxxx
+# x          5: xxxxxxxx
+# x          6: xxxxxxxx
+# x          7: xxxxxxxx
+# x          8: xxxxxxxx
+# x          9: xxxxxxxx
+# x         10: xxxxxxxx
+# x         11: xxxxxxxx
+# x         12: xxxxxxxx
+# x         13: xxxxxxxx
+# x         14: xxxxxxxx
+# x         15: xxxxxxxx
+# x         16: xxxxxxxx
+# x         17: xxxxxxxx
+# x         18: xxxxxxxx
+# x         19: xxxxxxxx
+# x         20: xxxxxxxx
+# x         21: xxxxxxxx
+# x         22: xxxxxxxx
+# x         23: xxxxxxxx
+# x         24: xxxxxxxx
+# x         25: xxxxxxxx
+# x         26: xxxxxxxx
+# x         27: xxxxxxxx
+# x         28: xxxxxxxx
+# x         29: xxxxxxxx
+# x         30: xxxxxxxx
+# x         31: xxxxxxxx
+# clock #:          53   instruction_EX: xxxxxxxx
+# gpio_we: 0, stall_EX: 0
+# x          0: xxxxxxxx
+# x          1: 0000000a
+# x          2: 00000000
+# x          3: 00000004
+# x          4: xxxxxxxx
+# x          5: xxxxxxxx
+# x          6: xxxxxxxx
+# x          7: xxxxxxxx
+# x          8: xxxxxxxx
+# x          9: xxxxxxxx
+# x         10: xxxxxxxx
+# x         11: xxxxxxxx
+# x         12: xxxxxxxx
+# x         13: xxxxxxxx
+# x         14: xxxxxxxx
+# x         15: xxxxxxxx
+# x         16: xxxxxxxx
+# x         17: xxxxxxxx
+# x         18: xxxxxxxx
+# x         19: xxxxxxxx
+# x         20: xxxxxxxx
+# x         21: xxxxxxxx
+# x         22: xxxxxxxx
+# x         23: xxxxxxxx
+# x         24: xxxxxxxx
+# x         25: xxxxxxxx
+# x         26: xxxxxxxx
+# x         27: xxxxxxxx
+# x         28: xxxxxxxx
+# x         29: xxxxxxxx
+# x         30: xxxxxxxx
+# x         31: xxxxxxxx
+# clock #:          54   instruction_EX: xxxxxxxx
+# gpio_we: 0, stall_EX: 0
+# x          0: xxxxxxxx
+# x          1: 0000000a
+# x          2: 00000000
+# x          3: 00000004
+# x          4: xxxxxxxx
+# x          5: xxxxxxxx
+# x          6: xxxxxxxx
+# x          7: xxxxxxxx
+# x          8: xxxxxxxx
+# x          9: xxxxxxxx
+# x         10: xxxxxxxx
+# x         11: xxxxxxxx
+# x         12: xxxxxxxx
+# x         13: xxxxxxxx
+# x         14: xxxxxxxx
+# x         15: xxxxxxxx
+# x         16: xxxxxxxx
+# x         17: xxxxxxxx
+# x         18: xxxxxxxx
+# x         19: xxxxxxxx
+# x         20: xxxxxxxx
+# x         21: xxxxxxxx
+# x         22: xxxxxxxx
+# x         23: xxxxxxxx
+# x         24: xxxxxxxx
+# x         25: xxxxxxxx
+# x         26: xxxxxxxx
+# x         27: xxxxxxxx
+# x         28: xxxxxxxx
+# x         29: xxxxxxxx
+# x         30: xxxxxxxx
+# x         31: xxxxxxxx
+# clock #:          55   instruction_EX: xxxxxxxx
+# gpio_we: 0, stall_EX: 0
+# x          0: xxxxxxxx
+# x          1: 0000000a
+# x          2: 00000000
+# x          3: 00000004
+# x          4: xxxxxxxx
+# x          5: xxxxxxxx
+# x          6: xxxxxxxx
+# x          7: xxxxxxxx
+# x          8: xxxxxxxx
+# x          9: xxxxxxxx
+# x         10: xxxxxxxx
+# x         11: xxxxxxxx
+# x         12: xxxxxxxx
+# x         13: xxxxxxxx
+# x         14: xxxxxxxx
+# x         15: xxxxxxxx
+# x         16: xxxxxxxx
+# x         17: xxxxxxxx
+# x         18: xxxxxxxx
+# x         19: xxxxxxxx
+# x         20: xxxxxxxx
+# x         21: xxxxxxxx
+# x         22: xxxxxxxx
+# x         23: xxxxxxxx
+# x         24: xxxxxxxx
+# x         25: xxxxxxxx
+# x         26: xxxxxxxx
+# x         27: xxxxxxxx
+# x         28: xxxxxxxx
+# x         29: xxxxxxxx
+# x         30: xxxxxxxx
+# x         31: xxxxxxxx
+# clock #:          56   instruction_EX: xxxxxxxx
+# gpio_we: 0, stall_EX: 0
+# x          0: xxxxxxxx
+# x          1: 0000000a
+# x          2: 00000000
+# x          3: 00000004
+# x          4: xxxxxxxx
+# x          5: xxxxxxxx
+# x          6: xxxxxxxx
+# x          7: xxxxxxxx
+# x          8: xxxxxxxx
+# x          9: xxxxxxxx
+# x         10: xxxxxxxx
+# x         11: xxxxxxxx
+# x         12: xxxxxxxx
+# x         13: xxxxxxxx
+# x         14: xxxxxxxx
+# x         15: xxxxxxxx
+# x         16: xxxxxxxx
+# x         17: xxxxxxxx
+# x         18: xxxxxxxx
+# x         19: xxxxxxxx
+# x         20: xxxxxxxx
+# x         21: xxxxxxxx
+# x         22: xxxxxxxx
+# x         23: xxxxxxxx
+# x         24: xxxxxxxx
+# x         25: xxxxxxxx
+# x         26: xxxxxxxx
+# x         27: xxxxxxxx
+# x         28: xxxxxxxx
+# x         29: xxxxxxxx
+# x         30: xxxxxxxx
+# x         31: xxxxxxxx
+# HEX0: 08
+# HEX1: 40
+# HEX2: 40
+# HEX3: 40
+# HEX4: 40
+# HEX5: 40
+# HEX6: 40
+# HEX7: 40
+# io_out: 0000000a
+# ** Note: $finish    : simtop.sv(83)
+#    Time: 561 ns  Iteration: 0  Instance: /simtop
+# End time: 16:45:01 on Nov 11,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0

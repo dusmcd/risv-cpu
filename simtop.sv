@@ -66,11 +66,20 @@ module simtop;
     $readmemh("testbench.txt", dut.cpu.instruction_mem);
   end
 
-  int NUM_CLOCKS = 40;
+  int NUM_CLOCKS = 55;
   initial begin
     wait(KEY[0] == 1'b1);
     repeat(NUM_CLOCKS) @(negedge clk);
     #1;
+    $display("HEX0: %h", HEX0);
+    $display("HEX1: %h", HEX1);
+    $display("HEX2: %h", HEX2);
+    $display("HEX3: %h", HEX3);
+    $display("HEX4: %h", HEX4);
+    $display("HEX5: %h", HEX5);
+    $display("HEX6: %h", HEX6);
+    $display("HEX7: %h", HEX7);
+    $display("io_out: %h", dut.cpu.io_out);
     $finish;
   end
 
@@ -84,9 +93,11 @@ module simtop;
   int clock_num = 0;
   always @(negedge clk) begin
     $display("clock #: %d   instruction_EX: %h", clock_num, dut.cpu.instruction_EX);
+    $display("gpio_we: %h, stall_EX: %h", dut.cpu.gpio_we, dut.cpu.stall_EX);
     clock_num++;
-    for (int i = 0; i < 32; i++)
+    for (int i = 0; i < 32; i++) begin
       $display("x%d: %h", i, dut.cpu.regfile.mem[i]);    
+    end
   end
 	
 	// assign simulated switch values
