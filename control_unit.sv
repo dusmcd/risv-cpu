@@ -14,9 +14,9 @@ module control_unit(
   output logic[3:0] aluop,
   output logic gpio_we,
   output logic stall_FETCH,
-  output logic [31:0] jal_addr_EX,
-  output logic [31:0] branch_addr_EX,
-  output logic [31:0] jalr_addr_EX,
+  output logic [11:0] jal_addr_EX,
+  output logic [11:0] branch_addr_EX,
+  output logic [11:0] jalr_addr_EX,
   output logic [1:0] pcsrc_EX
   );
 

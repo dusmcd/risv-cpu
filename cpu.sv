@@ -30,9 +30,9 @@ module cpu(input logic clk, input logic rst, input logic[17:0] io_in, output log
   logic [31:0] upper_imm_EX;
   logic [31:0] upper_imm_WB;
   logic [31:0] alu_srcdata_EX;
-  logic [31:0] jal_addr_EX;
-  logic [31:0] branch_addr_EX;
-  logic [31:0] jalr_addr_EX;
+  logic [11:0] jal_addr_EX;
+  logic [11:0] branch_addr_EX;
+  logic [11:0] jalr_addr_EX;
   logic [1:0] pcsrc_EX;
   logic stall_FETCH;
   logic stall_EX;
